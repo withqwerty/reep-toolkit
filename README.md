@@ -134,6 +134,7 @@ High-signal starting points:
 - [SportMonks Transfermarkt bridge](docs/examples/sportmonks-transfermarkt-bridge.md)
 - [FotMob signal-only player match](docs/examples/fotmob-signal-only-player.md)
 - [Women-only prior beats fuzzy bridge](docs/examples/women-only-prior-fuzzy-bridge.md)
+- [Top-down hierarchical bridge ingest](docs/examples/top-down-hierarchical-bridge-ingest.md)
 - [Semantic team prefix collision](docs/examples/semantic-team-prefix-collision.md)
 - [Fixture-overlap team bridge](docs/examples/fixture-overlap-team-bridge.md)
 - [Match fixture identity](docs/examples/match-fixture-identity.md)

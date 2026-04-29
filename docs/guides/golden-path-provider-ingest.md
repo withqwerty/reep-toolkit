@@ -110,7 +110,24 @@ Use the matching thresholds guide as the gate:
 
 The write set should be smaller than the candidate set.
 
-## 7. Write With Lineage
+## 7. Apply Hierarchical Providers Top-Down
+
+If the provider exposes a hierarchy, do not treat all strong rows as one flat write set.
+Use the hierarchy as evidence:
+
+```text
+competition -> season -> stage -> team participation -> match -> player
+```
+
+Apply and rerun level by level. A season that defers because the competition is still
+under review is not a failed season match. A match that defers because one team bridge
+is missing is not evidence that the match does not exist. Resolve parent authority
+first, then re-audit the children.
+
+Do not weaken lower-level gates to compensate for missing parents. The fix for a missing
+match bridge is usually stronger team/season context, not looser date or name matching.
+
+## 8. Write With Lineage
 
 Every accepted bridge should carry:
 
@@ -127,7 +144,7 @@ Every accepted bridge should carry:
 Do not write anonymous key-value pairs. Future maintainers need to know why a bridge
 exists.
 
-## 8. Keep Residue
+## 9. Keep Residue
 
 Unmatched records are useful if they are structured:
 
@@ -144,7 +161,7 @@ review_candidate:
 Residue should explain the blocker: missing DOB, duplicate candidates, namespace
 mismatch, provider conflict, source-prior conflict, or unsupported entity model.
 
-## 9. Run Maintenance Checks
+## 10. Run Maintenance Checks
 
 After the write set:
 
@@ -155,7 +172,7 @@ After the write set:
 - inspect drift in provider fields used for identity,
 - refresh or mark stale any read mirror used by the matcher.
 
-## 10. Document The Lesson
+## 11. Document The Lesson
 
 If the ingest teaches a reusable lesson, add either:
 
@@ -169,6 +186,7 @@ If the ingest teaches a reusable lesson, add either:
 Read these in order for a concrete walkthrough:
 
 1. [Provider ingest walkthrough](../examples/provider-ingest-walkthrough.md).
-2. [FotMob signal-only player match](../examples/fotmob-signal-only-player.md).
-3. [Bridge conflict case study](../examples/bridge-conflict-case-study.md).
-4. [Snapshot drift report](../examples/snapshot-drift-report.md).
+2. [Top-down hierarchical bridge ingest](../examples/top-down-hierarchical-bridge-ingest.md).
+3. [FotMob signal-only player match](../examples/fotmob-signal-only-player.md).
+4. [Bridge conflict case study](../examples/bridge-conflict-case-study.md).
+5. [Snapshot drift report](../examples/snapshot-drift-report.md).
