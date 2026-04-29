@@ -1,0 +1,15 @@
+{
+  "name": "reep-toolkit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npm run format:check && npm run docs:check",
+    "docs:catalogue": "python3 scripts/generate-examples-catalogue.py",
+    "docs:check": "python3 scripts/check-docs.py && python3 scripts/check-public-boundary.py",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "3.8.3"
+  }
+}
