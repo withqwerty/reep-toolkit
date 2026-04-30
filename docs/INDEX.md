@@ -66,6 +66,9 @@ guide tells you what to do with that knowledge when building or maintaining a re
   rules, and review routing.
 - [Bridging provider IDs](guides/bridging-provider-ids.md): direct bridges, derived
   bridges, conflicts, and bridge provenance.
+- [Relationship-constrained provider matching](guides/relationship-constrained-provider-matching.md):
+  using mapped competition, team, match, and line-up context without weakening identity
+  gates.
 - [Minting and entity creation](guides/minting-and-entity-creation.md): when to create
   new entities and when to defer.
 - [Duplicate resolution](guides/duplicate-resolution.md): merge, tombstone, redirect,

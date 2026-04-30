@@ -28,13 +28,13 @@ Use it when you need to answer questions like:
 
 ## Start Here
 
-| Goal                                  | Read first                                                  | Then go deeper                                                                                                        |
-| ------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Understand the register model         | [World model](docs/world-model/README.md)                   | [IDs and lineage](docs/world-model/ids-and-lineage.md), [source authority](docs/world-model/source-authority.md)      |
-| Ingest a new provider                 | [Before you ingest](docs/guides/before-you-ingest.md)       | [Golden path ingest](docs/guides/golden-path-provider-ingest.md), [provider cards](docs/providers/README.md)          |
-| Implement matching and bridge logic   | [Matching thresholds](docs/guides/matching-thresholds.md)   | [Bridging provider IDs](docs/guides/bridging-provider-ids.md), [examples catalogue](docs/examples/CATALOGUE.md)       |
-| Maintain an existing register         | [Register maintenance](docs/guides/register-maintenance.md) | [Duplicate resolution](docs/guides/duplicate-resolution.md), [snapshot drift](docs/examples/snapshot-drift-report.md) |
-| Contribute provider knowledge or docs | [Contributing](CONTRIBUTING.md)                             | [Editorial standard](docs/EDITORIAL.md), [front matter](docs/FRONTMATTER.md)                                          |
+| Goal                                  | Read first                                                  | Then go deeper                                                                                                                                                                                                  |
+| ------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Understand the register model         | [World model](docs/world-model/README.md)                   | [IDs and lineage](docs/world-model/ids-and-lineage.md), [source authority](docs/world-model/source-authority.md)                                                                                                |
+| Ingest a new provider                 | [Before you ingest](docs/guides/before-you-ingest.md)       | [Golden path ingest](docs/guides/golden-path-provider-ingest.md), [provider cards](docs/providers/README.md)                                                                                                    |
+| Implement matching and bridge logic   | [Matching thresholds](docs/guides/matching-thresholds.md)   | [Bridging provider IDs](docs/guides/bridging-provider-ids.md), [relationship-constrained matching](docs/guides/relationship-constrained-provider-matching.md), [examples catalogue](docs/examples/CATALOGUE.md) |
+| Maintain an existing register         | [Register maintenance](docs/guides/register-maintenance.md) | [Duplicate resolution](docs/guides/duplicate-resolution.md), [snapshot drift](docs/examples/snapshot-drift-report.md)                                                                                           |
+| Contribute provider knowledge or docs | [Contributing](CONTRIBUTING.md)                             | [Editorial standard](docs/EDITORIAL.md), [front matter](docs/FRONTMATTER.md)                                                                                                                                    |
 
 For the full documentation map, use [docs/INDEX.md](docs/INDEX.md).
 
@@ -75,6 +75,7 @@ Start with:
 
 - [Provider source taxonomy](docs/providers/sources.md)
 - [Bridging provider IDs](docs/guides/bridging-provider-ids.md)
+- [Relationship-constrained provider matching](docs/guides/relationship-constrained-provider-matching.md)
 - [Type-gated provider ID lookup](docs/examples/type-gated-provider-id-lookup.md)
 
 ### Confidence Routes The Write

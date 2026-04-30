@@ -34,6 +34,7 @@ credentials, deployment procedures, or one-off production commands.
 - [Golden path provider ingest](golden-path-provider-ingest.md)
 - [Matching thresholds](matching-thresholds.md)
 - [Bridging provider IDs](bridging-provider-ids.md)
+- [Relationship-constrained provider matching](relationship-constrained-provider-matching.md)
 - [Minting and entity creation](minting-and-entity-creation.md)
 - [Duplicate resolution](duplicate-resolution.md)
 - [Register maintenance](register-maintenance.md)
