@@ -167,6 +167,19 @@ It does not share:
 The boundary is documented in
 [public/private boundary](docs/world-model/public-private-boundary.md).
 
+## Relationship To The Other Reep Repos
+
+| Repo                       | Role                                                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `reep-toolkit` (this)      | Public documentation and examples for football identity work.                                                                              |
+| `reep-scripts`             | Public Python library: loaders, normalisers, registry protocols, matchers, evidence/candidate shapes, and reusable non-mutating templates. |
+| `reep-matching-logic-pack` | Private partner pack: source-authority playbooks, validation/review behaviour, maintenance loops, and sample write sets.                   |
+| `reep-register-next`       | Private Reep Next control plane: doctrine artefacts, recipes, mint salts, review/action ledgers, projections, and publish gates.           |
+
+Use this repo for explanation and public-safe examples. Use `reep-scripts` for runnable
+reusable code. Keep partner operating models in the logic pack and Reep-specific
+mutation machinery in `reep-register-next`.
+
 ## Contributing
 
 Contributions are welcome when they make the docs more useful and remain public-safe.

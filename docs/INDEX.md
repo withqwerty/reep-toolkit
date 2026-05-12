@@ -52,7 +52,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
 - [Source authority](world-model/source-authority.md): how to choose and document
   canonical sources.
 - [Public/private boundary](world-model/public-private-boundary.md): what belongs in an
-  open toolkit.
+  open toolkit and how this repo relates to `reep-scripts`, the private logic pack, and
+  `reep-register-next`.
 
 ## Practice Guides
 
