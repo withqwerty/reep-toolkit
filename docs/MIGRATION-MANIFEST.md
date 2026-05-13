@@ -111,31 +111,31 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 
 ## Python Source Families
 
-| Source family                   | Destination                                          | Disposition   | Public-safe review | Evidence status | Verification           |
-| ------------------------------- | ---------------------------------------------------- | ------------- | ------------------ | --------------- | ---------------------- |
-| `reep_scripts/evidence.py`      | `schemas/` and `reference-scripts/evidence/`         | `rewrite`     | pending            | synthetic_only  | schema validation      |
-| `reep_scripts/templates/`       | `docs/templates/` and `reference-scripts/templates/` | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
-| `reep_scripts/standardise/`     | `reference-scripts/normalisation/`                   | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
-| `reep_scripts/loaders/`         | `reference-scripts/loaders/`                         | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
-| `reep_scripts/matchers/`        | `reference-scripts/matchers/`                        | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
-| `reep_scripts/linkage/`         | `reference-scripts/writes/`                          | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
-| `reep_scripts/adapters/`        | none                                                 | `source_only` | pending            | not_applicable  | docs review            |
-| `reep_scripts/matchers/reep.py` | none                                                 | `source_only` | pending            | not_applicable  | public-boundary review |
-| `reep_scripts/config.py`        | none                                                 | `drop`        | pending            | not_applicable  | none                   |
-| `reep_scripts/__init__.py`      | none                                                 | `drop`        | pending            | not_applicable  | none                   |
+| Source family                   | Destination                              | Disposition   | Public-safe review | Evidence status | Verification           |
+| ------------------------------- | ---------------------------------------- | ------------- | ------------------ | --------------- | ---------------------- |
+| `reep_scripts/evidence.py`      | `reference-scripts/evidence_payloads.py` | `rewrite`     | pass               | synthetic_only  | reference-script check |
+| `reep_scripts/templates/`       | `reference-scripts/templates.py`         | `rewrite`     | pass               | synthetic_only  | fixture smoke test     |
+| `reep_scripts/standardise/`     | `reference-scripts/evidence_payloads.py` | `rewrite`     | pass               | synthetic_only  | reference-script check |
+| `reep_scripts/loaders/`         | none                                     | `source_only` | pass               | synthetic_only  | docs review            |
+| `reep_scripts/matchers/`        | none                                     | `source_only` | pass               | synthetic_only  | docs review            |
+| `reep_scripts/linkage/`         | none                                     | `source_only` | pass               | synthetic_only  | docs review            |
+| `reep_scripts/adapters/`        | none                                     | `source_only` | pass               | not_applicable  | docs review            |
+| `reep_scripts/matchers/reep.py` | none                                     | `source_only` | pass               | not_applicable  | public-boundary review |
+| `reep_scripts/config.py`        | none                                     | `drop`        | pass               | not_applicable  | none                   |
+| `reep_scripts/__init__.py`      | none                                     | `drop`        | pass               | not_applicable  | none                   |
 
 ## Tests
 
-| Source family                 | Destination                                 | Disposition   | Public-safe review | Evidence status | Verification       |
-| ----------------------------- | ------------------------------------------- | ------------- | ------------------ | --------------- | ------------------ |
-| `tests/test_evidence.py`      | `tests/reference/test_evidence_examples.py` | `rewrite`     | pending            | synthetic_only  | fixture smoke test |
-| `tests/test_templates.py`     | `tests/reference/test_template_examples.py` | `rewrite`     | pending            | synthetic_only  | fixture smoke test |
-| `tests/test_*_loader.py`      | `tests/reference/test_loader_examples.py`   | `source_only` | pending            | synthetic_only  | fixture smoke test |
-| `tests/test_*_matcher.py`     | `tests/reference/test_matcher_examples.py`  | `source_only` | pending            | synthetic_only  | fixture smoke test |
-| `tests/test_*fixtures*.py`    | `tests/reference/`                          | `source_only` | pending            | synthetic_only  | fixture smoke test |
-| `tests/test_adapters.py`      | none                                        | `drop`        | pending            | not_applicable  | none               |
-| `tests/test_reep_registry.py` | none                                        | `drop`        | pending            | not_applicable  | none               |
-| `tests/test_library_api.py`   | none                                        | `drop`        | pending            | not_applicable  | none               |
+| Source family                 | Destination                          | Disposition   | Public-safe review | Evidence status | Verification       |
+| ----------------------------- | ------------------------------------ | ------------- | ------------------ | --------------- | ------------------ |
+| `tests/test_evidence.py`      | `scripts/check-reference-scripts.py` | `rewrite`     | pass               | synthetic_only  | fixture smoke test |
+| `tests/test_templates.py`     | `scripts/check-reference-scripts.py` | `rewrite`     | pass               | synthetic_only  | fixture smoke test |
+| `tests/test_*_loader.py`      | none                                 | `source_only` | pass               | synthetic_only  | docs review        |
+| `tests/test_*_matcher.py`     | none                                 | `source_only` | pass               | synthetic_only  | docs review        |
+| `tests/test_*fixtures*.py`    | `scripts/check-reference-scripts.py` | `source_only` | pass               | synthetic_only  | fixture smoke test |
+| `tests/test_adapters.py`      | none                                 | `drop`        | pass               | not_applicable  | none               |
+| `tests/test_reep_registry.py` | none                                 | `drop`        | pass               | not_applicable  | none               |
+| `tests/test_library_api.py`   | none                                 | `drop`        | pass               | not_applicable  | none               |
 
 ## Package And Build Metadata
 

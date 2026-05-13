@@ -110,6 +110,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
   review-residue payloads.
 - [Evidence payload schema](templates/evidence-schema.md): JSON fields used by
   candidate, evidence, relationship, blocker, and review-residue fixtures.
+- [Reference scripts](templates/reference-scripts.md): copy-paste Python examples for
+  validating evidence payloads and generating non-mutating template payloads.
 
 ## Schemas
 

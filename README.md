@@ -51,6 +51,8 @@ docs/
 └── examples/      # small public-safe cases showing decisions and failure modes
 fixtures/
 └── evidence/      # synthetic payloads for docs and tests
+reference-scripts/
+└── *.py           # copy-paste validation and template examples
 schemas/
 └── reference-register.sql
 ```
