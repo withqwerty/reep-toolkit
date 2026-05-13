@@ -24,7 +24,7 @@ Each provider card should include:
 3. ID namespaces and stability.
 4. Matching surface by entity type.
 5. Bridge data to other providers.
-6. How to acquire the matching subset.
+6. Accepted input/source shapes.
 7. Source quirks and scheme changes.
 8. Recommended linking strategy.
 9. Known false-positive risks.
@@ -32,9 +32,9 @@ Each provider card should include:
 
 Use [\_template.md](_template.md) for new cards.
 
-## First Tranche
+## Current Cards
 
-These cards are the initial public-safe provider tranche:
+These cards are the current public-safe provider tranche:
 
 - [Wikidata](wikidata.md): universal cross-provider bridge and public entity spine.
 - [Transfermarkt](transfermarkt.md): de facto football bridge target.
@@ -44,6 +44,21 @@ These cards are the initial public-safe provider tranche:
 - [FotMob](fotmob.md): broad consumer app coverage with signal-only matching.
 - [TheSportsDB](thesportsdb.md): community API with Wikipedia-to-Wikidata bridge.
 - [Soccerdonna](soccerdonna.md): women's-football specialist and gender-scope signal.
+- [API-Football](api-football.md): commercial metadata API with no public bridge.
+- [Capology](capology.md): salary and contract context with thin identity evidence.
+- [Club Elo](clubelo.md): team ratings and historical result context.
+- [Football-Data.co.uk](football-data-co-uk.md): public results/odds CSVs.
+- [Fantasy Premier League](fpl.md): public Premier League `opta_numeric` bridge.
+- [Livesport ecosystem](livesport.md): Soccerway, Flashscore, and BeSoccer surfaces.
+- [SoFIFA](sofifa.md): game metadata with edition-scoped identity caveats.
+- [Understat](understat.md): limited xG/stat corroboration surface.
+- [SkillCorner](skillcorner.md): match/team/player tracking IDs and roster evidence.
+- [Impect ecosystem](impect.md): Impect, Wyscout, SkillCorner, and heim:spiel bridge
+  fan-out.
+- [Sportec Solutions](sportec.md), [PFF FC](pff.md), [Metrica Sports](metrica.md),
+  [TRACAB](tracab.md), [Second Spectrum](secondspectrum.md), [Hawk-Eye](hawkeye.md),
+  [Signality](signality.md), [DataFactory](datafactory.md), and
+  [Sportradar](sportradar.md): event/tracking/commercial ecosystem context.
 
 The wider provider backlog is tracked in [CATALOGUE.md](CATALOGUE.md).
 

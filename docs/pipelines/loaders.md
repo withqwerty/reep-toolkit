@@ -24,20 +24,20 @@ the target register and should not hide provider quirks.
 - Keep raw fields available when a normalisation can lose meaning.
 - Emit typed records that matchers can consume.
 
-## Acquisition Policy
+## Input Policy
 
 The public toolkit can ship different loader types by access tier:
 
-| Access tier  | Recommended loader                                     |
-| ------------ | ------------------------------------------------------ |
-| Public bulk  | Fetcher plus file loader when licence allows.          |
-| Public API   | Fetcher plus cached-response loader when terms permit. |
-| Public grey  | Cached-response loader only.                           |
-| Paid/private | User-supplied CSV/JSON loader only.                    |
+| Access tier  | Recommended loader                        |
+| ------------ | ----------------------------------------- |
+| Public bulk  | File loader for downloaded/open datasets. |
+| Public API   | Loader for documented response fixtures.  |
+| Public grey  | Cached-response loader only.              |
+| Paid/private | User-supplied CSV/JSON loader only.       |
 
 ## Shape Before Source
 
-Multiple acquisition routes should emit the same shape:
+Multiple input routes should emit the same shape:
 
 ```text
 load_players_from_api(...) -> Iterable[ProviderPlayer]

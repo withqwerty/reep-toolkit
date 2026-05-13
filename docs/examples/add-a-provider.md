@@ -31,8 +31,8 @@ Start with `docs/providers/_template.md`. Before coding, document:
 
 Choose the public-safe loader type:
 
-- fetcher plus loader for public bulk data,
-- cached JSON loader for grey APIs,
+- file loader for public bulk data,
+- cached JSON loader for documented API examples,
 - user-supplied file loader for paid/private exports.
 
 ## 3. Define Records

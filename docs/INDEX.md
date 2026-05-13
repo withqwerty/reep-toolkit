@@ -90,7 +90,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
 
 ## Pipelines
 
-- [Pipeline overview](pipelines/README.md): acquire, load, match, review, write, export.
+- [Pipeline overview](pipelines/README.md): snapshot, load, match, review, write,
+  export.
 - [Loaders](pipelines/loaders.md): normalising provider-native records into stable
   shapes.
 - [Registries](pipelines/registries.md): target-store lookup interfaces.

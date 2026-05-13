@@ -15,20 +15,20 @@ Snapshots make matching reproducible.
 
 ## Snapshot First
 
-Fetch or receive upstream data, write it to a durable snapshot, then run loaders and
-matchers from that snapshot. Avoid matching directly against transient API responses.
+Start from a durable upstream snapshot, then run loaders and matchers from that
+snapshot. Avoid matching directly against transient API responses.
 
 ## Snapshot Metadata
 
 Recommended metadata:
 
 - provider,
-- endpoint or dataset name,
-- acquisition timestamp,
+- source label or dataset name,
+- snapshot timestamp,
 - upstream version or export date,
 - content hash,
 - licence/access tier,
-- acquisition command or script version,
+- source-preparation version,
 - row count when applicable.
 
 ## Replay

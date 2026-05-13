@@ -80,10 +80,11 @@ List direct bridges to other providers and their reliability.
 | -------------------- | ------------ | ---------------- | ----- |
 | provider -> wikidata |              |                  |       |
 
-## Acquisition
+## Accepted Inputs
 
-Describe public, grey, paid, or private access. Do not publish credentials or data the
-project cannot redistribute.
+Describe the source shapes the card can safely talk about: public datasets, documented
+API responses, user-supplied exports, synthetic fixtures, or redacted examples. Do not
+publish credentials, private data, or data the project cannot redistribute.
 
 ## Quirks and Risks
 

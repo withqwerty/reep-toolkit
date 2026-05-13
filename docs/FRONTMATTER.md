@@ -86,11 +86,11 @@ private_dependencies: []
 ## `access_tier`
 
 - `public_bulk`: explicitly published data dumps or repos.
-- `public_api`: documented public API suitable for programmatic use.
+- `public_api`: documented public API with stable response semantics.
 - `public_grey`: reachable public surface with unclear re-use terms.
 - `paid_or_private`: customer-gated, licensed, or auth-walled.
 - `derived_public`: public bridge dataset derived from another provider.
-- `unknown`: needs research before recommending ingestion.
+- `unknown`: needs research before recommending register use.
 
 ## `source_kind`
 

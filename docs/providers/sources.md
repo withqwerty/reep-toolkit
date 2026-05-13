@@ -44,11 +44,11 @@ drive matching decisions.
 | Append-only | Old records rarely mutate.                     | Simple reruns are usually safe. |
 | Evolving    | Existing records can change, merge, or retire. | Need drift checks and lineage.  |
 
-## Acquisition Tiers
+## Access Tiers
 
-| Tier         | Examples                                           | Public toolkit policy                                                          |
-| ------------ | -------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Public bulk  | Wikidata dumps, open GitHub datasets.              | Ship fetchers when licence allows.                                             |
-| Public API   | Official public endpoints with compatible terms.   | Ship fetchers carefully.                                                       |
-| Public grey  | Public endpoints with unclear programmatic re-use. | Document shape, prefer established third-party libraries, avoid live fetchers. |
-| Paid/private | Vendor feeds and customer exports.                 | Document abstract shapes, ship loaders for user-supplied files only.           |
+| Tier         | Examples                                         | Public toolkit policy                                              |
+| ------------ | ------------------------------------------------ | ------------------------------------------------------------------ |
+| Public bulk  | Wikidata dumps, open GitHub datasets.            | Document dataset shape and licence constraints.                    |
+| Public API   | Official public endpoints with compatible terms. | Document response shape and stable IDs.                            |
+| Public grey  | Public endpoints with unclear re-use terms.      | Document field semantics without publishing operational mechanics. |
+| Paid/private | Vendor feeds and customer exports.               | Document abstract shapes and user-supplied file patterns only.     |

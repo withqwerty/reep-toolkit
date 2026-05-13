@@ -17,7 +17,7 @@ search_tags: [snapshot, update, drift]
 
 ## 1. Capture or Receive Snapshot
 
-Record provider, endpoint, export date, content hash, and acquisition notes.
+Record provider, source label, export date, content hash, and source notes.
 
 ## 2. Load Records
 

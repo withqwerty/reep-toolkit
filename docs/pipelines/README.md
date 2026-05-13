@@ -14,7 +14,7 @@ contribution_model: maintainer_doctrine
 The Reep-style pipeline keeps each decision point separate:
 
 ```text
-acquire snapshot -> load records -> match candidates -> review weak matches -> write lineage -> export/register API
+source snapshot -> load records -> match candidates -> review weak matches -> write lineage -> export/register API
 ```
 
 Each stage is replaceable. A notebook user may load CSVs into memory. A public register
