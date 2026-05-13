@@ -83,6 +83,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
   provider-card shape.
 - [Provider catalogue](providers/CATALOGUE.md): full-card coverage and queued provider
   docs.
+- [Provider ecosystem notes](providers/ecosystem-notes.md): context for provider layers,
+  rights surfaces, closed tools, and bridge hubs.
 - [Provider template](providers/_template.md): front matter and section skeleton for new
   providers.
 - [Source taxonomy](providers/sources.md): living/static, authoritative/derived,

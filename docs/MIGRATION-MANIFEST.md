@@ -64,7 +64,7 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `docs/providers/README.md`               | `docs/providers/README.md`              | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/CATALOGUE.md`            | `docs/providers/CATALOGUE.md`           | `migrate`   | pass               | checked         | catalogue generation |
 | `docs/providers/sources.md`              | `docs/providers/sources.md`             | `rewrite`   | pass               | checked         | docs review          |
-| `docs/providers/ecosystem-notes.md`      | `docs/providers/ecosystem-notes.md`     | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/ecosystem-notes.md`      | `docs/providers/ecosystem-notes.md`     | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/api-football.md`         | `docs/providers/api-football.md`        | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/capology.md`             | `docs/providers/capology.md`            | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/clubelo.md`              | `docs/providers/clubelo.md`             | `rewrite`   | pass               | checked         | docs review          |

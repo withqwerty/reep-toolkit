@@ -27,6 +27,7 @@ export default defineConfig({
             { label: "Provider Overview", slug: "providers/index" },
             { label: "Provider Catalogue", slug: "providers/catalogue" },
             { label: "Source Taxonomy", slug: "providers/sources" },
+            { label: "Provider Ecosystem Notes", slug: "providers/ecosystem-notes" },
             { label: "Transfermarkt", slug: "providers/transfermarkt" },
             { label: "Opta / Stats Perform", slug: "providers/opta" },
             { label: "StatsBomb", slug: "providers/statsbomb" },

@@ -67,6 +67,8 @@ The wider provider backlog is tracked in [CATALOGUE.md](CATALOGUE.md).
 - [Provider catalogue](CATALOGUE.md): full-card coverage and queued provider docs.
 - [Source taxonomy](sources.md): how to classify providers before deciding what they can
   do in a register.
+- [Provider ecosystem notes](ecosystem-notes.md): context for rights, product layers,
+  closed operational platforms, and bridge hubs.
 
 ## Searchable Front Matter
 
