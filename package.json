@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "npm run format:check && npm run docs:check && npm run reference-scripts:check && npm run site:build",
+    "check": "npm run format:check && npm run docs:check && npm run schema:check && npm run reference-scripts:check && npm run site:build",
     "docs:catalogue": "python3 scripts/generate-examples-catalogue.py",
     "docs:check": "python3 scripts/check-docs.py && python3 scripts/check-public-boundary.py",
     "format": "prettier --write .",
@@ -11,6 +11,7 @@
     "site:build": "npm run site:sync && astro build",
     "site:dev": "npm run site:sync && astro dev",
     "site:sync": "python3 scripts/sync-starlight-docs.py",
+    "schema:check": "sqlite3 :memory: < schemas/reference-register.sql",
     "reference-scripts:check": "python3 scripts/check-reference-scripts.py"
   },
   "devDependencies": {

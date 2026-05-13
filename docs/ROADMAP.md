@@ -11,7 +11,9 @@ contribution_model: maintainer_doctrine
 
 # Roadmap
 
-This roadmap describes the draft scope for the first public-safe Reep Toolkit pass.
+This roadmap describes the current post-migration work for Reep Toolkit. The first
+public-safe consolidation pass is in place: this repo is now the canonical public docs,
+provider-reference, worked-example, schema, and reference-script surface.
 
 ## V1 Draft
 
@@ -37,21 +39,24 @@ Scope:
 
 ## Review Gate
 
-Before promoting this as the public toolkit site, review:
+Before promoting the site publicly, review:
 
 - whether the public/private boundary is strict enough,
 - whether Reep is positioned as a case study rather than a hidden dependency,
 - whether the front matter keys are sufficient for search and contribution workflows,
 - whether the reference schema is helpful without over-prescribing Reep internals,
-- which provider cards should be migrated first;
-- which `reep-scripts` docs, examples, fixtures, and schemas should be migrated before
-  that repo is frozen or archived.
+- whether migrated provider-card statuses match their reviewed state;
+- whether any remaining `reep-scripts` material is worth preserving as public guidance
+  before that repo is archived.
 
 ## Next Work
 
-1. Reconcile this draft against `../reep-scripts`.
-2. Promote queued provider cards from the catalogue in priority order.
-3. Turn the worked examples into runnable examples once the document shape is accepted.
-4. Expand the Starlight site with generated catalogues and any custom browsing surfaces
-   that Markdown/front matter cannot cover cleanly.
-5. Keep private breadcrumbs out of public docs as provider cards are migrated.
+1. Finish the `reep-scripts` archive posture so it points readers here instead of
+   presenting itself as an active package.
+2. Promote or explicitly park any remaining provider facts from `football-docs` and
+   `reep-scripts`.
+3. Add custom browsing surfaces only where Markdown, the sidebar, and full-text search
+   are not enough.
+4. Keep the static site build, schema smoke test, reference-script smoke test, and
+   public-boundary checks as the release gate.
+5. Keep private breadcrumbs out of public docs as provider cards continue to improve.

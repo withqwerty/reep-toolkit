@@ -61,6 +61,7 @@ private_dependencies: []
 - `evidence_required`: contributors can update the page with reproducible evidence.
 - `maintainer_doctrine`: changes should be reviewed as doctrine or operating practice.
 - `example_patch`: contributions should keep the example small and reproducible.
+- `generated`: generated output; edit the source docs instead.
 
 ## `doc_type`
 
@@ -75,12 +76,17 @@ private_dependencies: []
 - `example`
 - `examples_catalogue`
 - `schema`
+- `schema_reference`
+- `template_index`
+- `reference_scripts`
 
 ## `status`
 
 - `draft`: useful first pass, needs review.
+- `review_ready`: public-safe enough for broad review, but not treated as stable.
 - `reviewed`: maintainer-reviewed and public-safe.
 - `stable`: treated as public reference.
+- `generated`: generated from source metadata.
 - `deprecated`: superseded but retained for history.
 
 ## `access_tier`

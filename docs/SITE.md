@@ -11,8 +11,9 @@ contribution_model: maintainer_doctrine
 
 # Guide Site Model
 
-This folder is source content for a guide website. A site generator can build
-navigation, filters, and search facets from front matter without hard-coding every page.
+This folder is source content for a guide website. Front matter drives validation,
+catalogues, and future browsing surfaces; the current site uses an explicit Starlight
+sidebar plus full-text search.
 
 ## V1 Site Decision
 
@@ -24,16 +25,16 @@ The current implementation uses Astro Starlight. Source Markdown remains in `doc
 top-level contributor files, and `README.md`; generated Starlight content is written to
 `src/content/docs/` by `npm run site:sync` and is not edited by hand.
 
-Recommended V1 shape:
+Current V1 shape:
 
 | Area              | Treatment                                                                    |
 | ----------------- | ---------------------------------------------------------------------------- |
 | Home              | Use [README.md](../README.md) as the overview and route map.                 |
-| Navigation        | Generate from `site_section`, folder order, and [docs/INDEX.md](INDEX.md).   |
+| Navigation        | Explicit Starlight sidebar in `astro.config.mjs`, grouped by task area.      |
 | Provider pages    | Reference pages with evidence-backed facts, safe-use matrices, and gotchas.  |
 | Practice guides   | Opinionated doctrine pages, maintained more tightly than provider reference. |
 | Examples          | First-class pages, browsable by failure mode and decision.                   |
-| Search            | Faceted search over front matter plus full-text Markdown.                    |
+| Search            | Starlight full-text search over generated Markdown pages.                    |
 | Contribution flow | Pull request edits to Markdown; generated catalogue committed with changes.  |
 
 Do not make the first site a marketing page. The first screen should help a reader pick
@@ -42,7 +43,8 @@ or maintain a register.
 
 ## V1 Navigation
 
-Use a task-first navigation:
+Use the explicit task-first sidebar in `astro.config.mjs` as the current navigation
+authority:
 
 1. Start here
 2. World model
@@ -68,23 +70,12 @@ doctrine page together.
 | `examples`     | Narrative or runnable examples.                                  |
 | `contribution` | Contributor guidance and metadata taxonomy.                      |
 
-## Search Facets
+## Search Metadata
 
-The site exposes:
-
-- provider,
-- entity types,
-- failure mode,
-- decision,
-- search tags,
-- content lane,
-- access tier,
-- authority role,
-- bridge providers,
-- matching fields,
-- confidence floor,
-- status,
-- stance.
+Source pages keep metadata such as provider, entity types, failure mode, decision,
+search tags, content lane, access tier, authority role, bridge providers, matching
+fields, confidence floor, status, and stance. Today that metadata is validated and used
+for generated catalogues. A future custom browser can expose it as filters.
 
 ## Page Types
 
@@ -120,5 +111,5 @@ Pages with `public_safe: false` must not be published. Draft pages can be publis
 clearly marked as draft.
 
 Generated files such as [examples/CATALOGUE.md](examples/CATALOGUE.md) should be
-regenerated before publishing. If the generated catalogue is stale, the site search will
-still work from front matter, but the committed docs view will drift.
+regenerated before publishing. If the generated catalogue is stale, the committed docs
+view will drift even though the source pages still build.

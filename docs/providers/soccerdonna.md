@@ -1,7 +1,7 @@
 ---
 doc_type: provider_card
 content_lane: reference
-status: draft
+status: review_ready
 public_safe: true
 last_verified: 2026-05-13
 site_section: providers

@@ -129,7 +129,7 @@ def match_bridge_candidate(
             "target_label": match_label,
             "score": score,
             "method": method,
-            "status": "accepted" if target_id else "review",
+            "status": _target_status(target_id, score),
             "evidence": evidence,
             "relationship_evidence": [item for item in relationships if item],
             "blockers": [],
@@ -195,7 +195,7 @@ def split_season_stage_candidates(
             "target_id": target_season_id,
             "target_label": season_label,
             "method": method,
-            "status": "accepted" if target_season_id else "review",
+            "status": "review",
             "evidence": [
                 _drop_empty(
                     {
@@ -342,3 +342,11 @@ def _relationship(
 
 def _drop_empty(payload: dict[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in payload.items() if value is not None}
+
+
+def _target_status(target_id: str | None, score: float | None) -> str:
+    """Only mark direct-bridge certainty as accepted in portable examples."""
+
+    if target_id and score == 1.0:
+        return "accepted"
+    return "review"

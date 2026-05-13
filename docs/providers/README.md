@@ -24,10 +24,10 @@ Each provider card should include:
 3. ID namespaces and stability.
 4. Matching surface by entity type.
 5. Bridge data to other providers.
-6. Accepted input/source shapes.
-7. Source quirks and scheme changes.
-8. Recommended linking strategy.
-9. Known false-positive risks.
+6. Source quirks and scheme changes.
+7. Recommended linking strategy.
+8. Known false-positive risks.
+9. Accepted input/source shapes when the card needs to define them explicitly.
 10. References and reproducible evidence.
 
 Use [\_template.md](_template.md) for new cards.

@@ -359,9 +359,8 @@ the current checks plus the site-specific layer.
 | Front matter validation       | Makes search, nav, and catalogues reliable.                 |
 | Local link validation         | Prevents dead docs.                                         |
 | Public-boundary validation    | Blocks private paths, credentials, and operational leakage. |
-| Provider catalogue generation | Builds provider tables from front matter.                   |
 | Examples catalogue generation | Builds example search pages from front matter.              |
-| Schema validation             | Validates committed JSON examples against schemas.          |
+| Schema smoke test             | Confirms the reference SQLite schema loads.                 |
 | Reference-script smoke tests  | Runs scripts only against committed fixtures.               |
 | Site build                    | Confirms navigation, search index, and pages compile.       |
 
@@ -371,10 +370,8 @@ Target gate:
 npm run check
   npm run format:check
   npm run docs:check
-  npm run providers:catalogue -- --check
-  npm run examples:catalogue -- --check
-  npm run schemas:check
-  npm run reference-scripts:test
+  npm run schema:check
+  npm run reference-scripts:check
   npm run site:build
 ```
 
@@ -382,8 +379,7 @@ Developer convenience commands can remain separate:
 
 ```text
 npm run format
-npm run providers:catalogue
-npm run examples:catalogue
+npm run docs:catalogue
 ```
 
 ## Contribution Model

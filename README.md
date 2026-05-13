@@ -230,7 +230,8 @@ npm install
 npm run check
 ```
 
-`npm run check` validates formatting, Markdown front matter, local links, example
-catalogue metadata, and obvious public-boundary leaks.
+`npm run check` validates formatting, Markdown front matter, local links, the reference
+schema, reference-script fixtures, the static site build, and obvious public-boundary
+leaks.
 
 Use `npm run format` before committing docs changes.

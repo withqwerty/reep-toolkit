@@ -82,9 +82,10 @@ List direct bridges to other providers and their reliability.
 
 ## Accepted Inputs
 
-Describe the source shapes the card can safely talk about: public datasets, documented
-API responses, user-supplied exports, synthetic fixtures, or redacted examples. Do not
-publish credentials, private data, or data the project cannot redistribute.
+Use this section when the provider has multiple safe input shapes or when the access
+boundary needs explanation. Describe public datasets, documented API responses,
+user-supplied exports, synthetic fixtures, or redacted examples. Do not publish
+credentials, private data, or data the project cannot redistribute.
 
 ## Quirks and Risks
 

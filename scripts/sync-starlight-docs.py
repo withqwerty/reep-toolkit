@@ -10,9 +10,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "src" / "content" / "docs"
+PUBLIC_DIR = ROOT / "public"
 SOURCE_FILES = [ROOT / "README.md", ROOT / "CONTRIBUTING.md"]
 SOURCE_ROOTS = [ROOT / "docs"]
 SKIP_PARTS = {".git", ".history", "node_modules"}
+STATIC_ASSETS = (
+    (ROOT / "fixtures", PUBLIC_DIR / "fixtures"),
+    (ROOT / "reference-scripts", PUBLIC_DIR / "reference-scripts"),
+    (
+        ROOT / "schemas" / "reference-register.sql",
+        PUBLIC_DIR / "schemas" / "reference-register.sql",
+    ),
+)
 FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
 LINK_RE = re.compile(r"(\[[^\]]+\]\()([^)#]+)(#[^)]+)?(\))")
@@ -164,8 +173,36 @@ def main() -> int:
         destination.write_text(render(source, body))
         written += 1
 
+    static_written = sync_static_assets()
     print(f"synced {written} docs to {OUT_DIR.relative_to(ROOT)} ({skipped} skipped)")
+    print(f"synced {static_written} static assets to {PUBLIC_DIR.relative_to(ROOT)}")
     return 0
+
+
+def sync_static_assets() -> int:
+    written = 0
+    for source, destination in STATIC_ASSETS:
+        if not source.exists():
+            continue
+
+        if destination.exists():
+            if destination.is_dir():
+                shutil.rmtree(destination)
+            else:
+                destination.unlink()
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if source.is_dir():
+            shutil.copytree(
+                source,
+                destination,
+                ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+            )
+            written += sum(1 for path in destination.rglob("*") if path.is_file())
+        else:
+            shutil.copy2(source, destination)
+            written += 1
+    return written
 
 
 if __name__ == "__main__":
