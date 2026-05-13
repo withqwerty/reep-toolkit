@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: review_ready
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -42,13 +42,24 @@ context the difference between a strong candidate and a false positive.
 
 ## Matching Surface
 
-| Field           | Use                           | Gotcha                                                  |
-| --------------- | ----------------------------- | ------------------------------------------------------- |
-| FotMob ID       | Provider bridge once matched. | No public Wikidata property at time of draft.           |
-| Name            | Primary player/team signal.   | Non-Latin primary names can appear.                     |
-| Date of birth   | Strong player signal.         | Missing for some lower-tier players.                    |
-| Nationality     | Corroboration.                | Usually primary nationality only.                       |
-| Team/league IDs | Context.                      | Current-team data can drift during loans and transfers. |
+| Field           | Use                           | Gotcha                                                   |
+| --------------- | ----------------------------- | -------------------------------------------------------- |
+| FotMob ID       | Provider bridge once matched. | No public Wikidata property at time of draft.            |
+| Name            | Primary player/team signal.   | Non-Latin primary names can appear.                      |
+| Date of birth   | Strong player signal.         | Missing for some lower-tier players.                     |
+| Nationality     | Corroboration.                | Usually primary nationality only.                        |
+| Team/league IDs | Context.                      | Current-team data can drift during loans and transfers.  |
+| Alias fields    | Transliteration support.      | Useful when primary name is non-Latin or shortened.      |
+| Position fields | Weak corroboration.           | Labels can differ between squad and player detail views. |
+
+## Bridge Surface
+
+| Bridge route             | Use                                              | Caution                                                           |
+| ------------------------ | ------------------------------------------------ | ----------------------------------------------------------------- |
+| FotMob player → register | DOB + normalised name + nationality cascade.     | Review missing-DOB, alias-only, or duplicate-name cases.          |
+| FotMob team → register   | Name + country/category + team ID.               | Same display names across countries and levels are common.        |
+| FotMob match → register  | Match ID after date/team/competition resolution. | Event detail is not identity without resolved fixture context.    |
+| FotMob → Wikidata        | No stable public property in this draft.         | Treat any future property as a new bridge route requiring review. |
 
 ## Reep-Style Linking Advice
 
@@ -86,8 +97,12 @@ context the difference between a strong candidate and a false positive.
 
 - No deterministic bridge path means false positives are the main risk.
 - Position labels can differ between endpoints.
+- Native-script names can appear as the primary name. Alias fields are useful
+  transliteration evidence, not proof on their own.
 - Coach IDs and player IDs are separate even if both are numeric.
 - API shape is public but not formally documented as a stable ingestion surface.
+- Current team can lag transfer or loan movement. Do not use it as a substitute for DOB
+  on player identity.
 
 ## References
 

@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -60,6 +60,14 @@ The tradeoff is community-curated quality and multi-sport noise.
 | Team and league names              | Context.                                          | League names may be country-prefixed.                   |
 | Sport field                        | Filtering.                                        | Always filter to football/soccer to avoid other sports. |
 
+## Bridge Surface
+
+| Bridge route                       | Use                                  | Caution                                                      |
+| ---------------------------------- | ------------------------------------ | ------------------------------------------------------------ |
+| `strWikipedia` → Wikidata          | Primary public bridge.               | Validate redirects, deleted pages, and disambiguation pages. |
+| TheSportsDB → sibling provider IDs | Bonus bridge evidence when explicit. | Coverage varies and fields should be treated independently.  |
+| TheSportsDB fallback → register    | DOB + name + nationality.            | Community fields can be missing, stale, or inconsistent.     |
+
 ## Reep-Style Linking Advice
 
 - Resolve `strWikipedia` to a QID and use that as the primary bridge when valid.
@@ -73,6 +81,9 @@ The tradeoff is community-curated quality and multi-sport noise.
 - Multi-sport data requires explicit filtering.
 - Heights and other measurements can mix units.
 - Top-flight entries are usually cleaner than long-tail entries.
+- League names may include country adjectives such as "English Premier League"; strip or
+  map those before matching against provider-neutral competition labels.
+- Coach/manager coverage is sparse compared with players and teams.
 
 ## References
 

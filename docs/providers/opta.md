@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: review_ready
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -41,12 +41,12 @@ each namespace as its own provider ID until a documented mapping proves equivale
 
 ## ID Systems
 
-| Namespace        | Shape                                      | Entity coverage                                              | Notes                                                             |
-| ---------------- | ------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------------- |
-| `opta`           | 25-character alphanumeric UUID-like string | Player, team, competition, season, match.                    | Modern Stats Perform surface.                                     |
-| `opta_numeric`   | numeric                                    | Player, team, competition, season in legacy/public surfaces. | Publicly recoverable in some contexts, especially FPL.            |
-| `optacore`       | numeric                                    | Competition and season.                                      | Separate small-integer namespace; do not mix with `opta_numeric`. |
-| `premier_league` | numeric                                    | Premier League player pages.                                 | Related public ecosystem, but not equal to Opta numeric.          |
+| Namespace        | Shape                                      | Entity coverage                                                     | Notes                                                             |
+| ---------------- | ------------------------------------------ | ------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `opta`           | 25-character alphanumeric UUID-like string | Player, team, competition, season, match.                           | Modern Stats Perform surface.                                     |
+| `opta_numeric`   | numeric                                    | Player, team, coach, competition, season in legacy/public surfaces. | Publicly recoverable in some contexts, especially FPL.            |
+| `optacore`       | numeric                                    | Competition and season.                                             | Separate small-integer namespace; do not mix with `opta_numeric`. |
+| `premier_league` | numeric                                    | Premier League player pages.                                        | Related public ecosystem, but not equal to Opta numeric.          |
 
 ## Matching Surface
 
@@ -57,6 +57,16 @@ each namespace as its own provider ID until a documented mapping proves equivale
 | Name and DOB                | Strong player matching when supplied.   | Feed shapes vary by product.                                              |
 | Team ID                     | Team context.                           | Keep namespace explicit.                                                  |
 | Competition/season mappings | Season model.                           | Competition and season IDs can exist in multiple Opta-related namespaces. |
+
+## Bridge Surface
+
+| Bridge route                            | Use                                      | Caution                                                            |
+| --------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------ |
+| FPL `code` → `opta_numeric` player      | Public Premier League player bridge.     | It is not a modern Opta UUID.                                      |
+| FPL `team_code` → `opta_numeric` team   | Public Premier League team bridge.       | Do not confuse with the per-season FPL `team` ID.                  |
+| Wikidata → `opta_numeric`               | Public player/team/competition evidence. | Coverage is sparse and namespace-specific.                         |
+| Licensed mapping → `opta` UUID          | Strong bridge inside licensed feeds.     | Keep payloads and private mappings out of public examples.         |
+| `optacore` mapping → competition/season | Useful structural mapping.               | Small integers can collide visually with other numeric namespaces. |
 
 ## Reep-Style Linking Advice
 
@@ -97,8 +107,11 @@ each namespace as its own provider ID until a documented mapping proves equivale
 
 - A small integer can be `optacore`, not `opta_numeric`.
 - FPL `code` is public evidence for `opta_numeric`, not for modern Opta UUIDs.
+- FPL `team_code` is the team `opta_numeric`; FPL `team` is a season-scoped FPL ID.
 - Third-party docs often say "Opta ID" without naming the namespace.
 - Competition, season, and match modelling can differ between product surfaces.
+- Event-data consumers such as WhoScored can licence Opta data without becoming part of
+  the Opta/Stats Perform ID family.
 
 ## References
 

@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: review_ready
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -82,6 +82,17 @@ Important football properties include:
 | Soccerdonna   | P4381 player, P8134 coach   | P7878  | —           | High-value women's-football bridge.     |
 | Opta numeric  | P8736 player                | P8737  | P8735       | Numeric legacy Opta, not modern UUID.   |
 
+## Bulk Snapshot Notes
+
+Wikidata can be queried live, but reproducible reconciliation should prefer a pinned
+dump snapshot when the output matters. Dumps are more work to process, but they avoid
+SPARQL timeout/rate-limit behaviour and preserve the exact claim state used for a review
+or bridge backfill.
+
+When processing dumps, keep external-ID extraction broad and matching acceptance narrow.
+A QID with many external IDs is useful candidate evidence; it is not permission to write
+every provider bridge without type, DOB, country, and source-role gates.
+
 ## Reep-Style Linking Advice
 
 - Treat QID and external-ID bridges as strong evidence when entity type is clear.
@@ -122,6 +133,14 @@ Important football properties include:
   before matching.
 - Women's football and lower tiers have thinner coverage.
 - Some external IDs are slugs or legacy IDs, not stable modern provider IDs.
+- Live label lookups can return the QID string when no English label exists; detect
+  `Q<digits>` labels and fall through to a multilingual label chain.
+- DOB precision matters. Day-precision DOB is strong person evidence; year-only DOB is
+  not enough for automatic person bridging.
+- Validate seed QID slots before consuming them. A non-`Q<digits>` value in a QID field
+  should be skipped or reviewed, not treated as a Wikidata item.
+- Name-only matches through Wikidata are not acceptable canonical bridges. Require DOB
+  or a direct external-ID property plus entity-type context.
 
 ## References
 

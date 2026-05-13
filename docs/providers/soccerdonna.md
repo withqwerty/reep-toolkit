@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -37,14 +37,14 @@ Soccerdonna alone.
 
 ## Entity Model
 
-| Entity type | Soccerdonna term             | ID shape  | Notes                                         |
-| ----------- | ---------------------------- | --------- | --------------------------------------------- |
-| Player      | Spielerin                    | numeric   | Women's player profile.                       |
-| Coach       | TrainerIn                    | numeric   | Separate from player namespace.               |
-| Club/team   | Verein / Mannschaft          | numeric   | Parent club and team-section concepts matter. |
-| Competition | Wettbewerb / Pokalwettbewerb | code      | Codes are provider-specific.                  |
-| Match       | Spielbericht                 | numeric   | Match report ID.                              |
-| Season      | URL/form parameter           | year-like | Endpoint shape differs for leagues and cups.  |
+| Entity type | Soccerdonna term             | ID shape  | Notes                                                |
+| ----------- | ---------------------------- | --------- | ---------------------------------------------------- |
+| Player      | Spielerin                    | numeric   | Women's player profile.                              |
+| Coach       | TrainerIn                    | numeric   | Separate from player namespace; coach gender absent. |
+| Club/team   | Verein / Mannschaft          | numeric   | Parent club and team-section concepts matter.        |
+| Competition | Wettbewerb / Pokalwettbewerb | code      | Codes are provider-specific.                         |
+| Match       | Spielbericht                 | numeric   | Match report ID.                                     |
+| Season      | URL/form parameter           | year-like | Endpoint shape differs for leagues and cups.         |
 
 ## Matching Surface
 
@@ -56,6 +56,15 @@ Soccerdonna alone.
 | Nationality      | Corroboration.                           | Translate/normalise country labels.                  |
 | Team/club IDs    | Team context.                            | Parent club and sub-team IDs need careful modelling. |
 | Competition code | Competition bridge.                      | Codes are not reliably derivable from country/name.  |
+
+## Bridge Surface
+
+| Bridge route                   | Use                                                  | Caution                                                          |
+| ------------------------------ | ---------------------------------------------------- | ---------------------------------------------------------------- |
+| Wikidata → Soccerdonna player  | Strong women's-football bridge.                      | Keep as player-scoped property evidence.                         |
+| Wikidata → Soccerdonna coach   | Strong coach bridge where present.                   | Do not infer coach gender from Soccerdonna.                      |
+| Wikidata → Soccerdonna team    | Strong team bridge.                                  | Use team gender/scope gates before attaching to a register team. |
+| Soccerdonna profile DOB + name | Person corroboration when Wikidata bridge is absent. | DOB usually requires profile/detail pages, not squad listings.   |
 
 ## Reep-Style Linking Advice
 
@@ -70,10 +79,15 @@ Soccerdonna alone.
 ## Gotchas
 
 - DOB is not always present on squad listings; profile pages matter.
-- League and cup endpoints can have different historical-season mechanics.
+- League and cup endpoints can have different historical-season mechanics; do not assume
+  a league fixture path returns the full cup bracket.
 - Country names and labels may be German even on English paths.
 - Parent club and team-section concepts are distinct.
 - Coach gender is absent; recover through another reliable source.
+- Competition codes can be counter-intuitive and must be verified from source pages
+  rather than guessed from country or competition name.
+- Some player and coach profiles have genuine DOB gaps. Re-reading the same page is not
+  a substitute for another corroborating source.
 
 ## References
 

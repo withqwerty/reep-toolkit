@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: review_ready
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -57,7 +57,17 @@ path still matters because bridge coverage is not universal.
 | Player name fields   | Fallback matching.          | Prefer full/common names over abbreviated display names.         |
 | `date_of_birth`      | Strong player/coach signal. | Check nulls and format.                                          |
 | `nationality_id`     | Corroboration.              | Foreign key; resolve country table before comparing.             |
+| `position_id`        | Weak corroboration.         | Foreign key; resolve lookup table before comparing labels.       |
 | Fixture participants | Match matching.             | Home/away semantics and participant arrays need careful parsing. |
+
+## Bridge Surface
+
+| Bridge route                             | Use                                           | Caution                                                         |
+| ---------------------------------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| SportMonks player → Transfermarkt        | Primary direct player bridge.                 | Present for many active players, not all academy/youth records. |
+| SportMonks team → Transfermarkt          | Primary direct team bridge.                   | Check category, country, and men's/women's/youth scope.         |
+| SportMonks coach → Transfermarkt manager | Strong where present.                         | Coach coverage varies by plan and endpoint.                     |
+| SportMonks fallback → register           | DOB + normalised name + resolved nationality. | Review null-DOB and same-name collisions.                       |
 
 ## Reep-Style Linking Advice
 
@@ -96,9 +106,13 @@ path still matters because bridge coverage is not universal.
 
 - API includes and nested relationships can affect quota and payload shape.
 - Country and position values are IDs, not labels.
+- Match feeds may expose abbreviated display names; use common/full names for identity
+  matching when the endpoint supplies them.
 - Fixture participants need explicit home/away handling.
 - Historical API versions may contain duplicate or inactive records that should be
   rematched from current snapshots.
+- Missing `transfermarkt_id` is a review/backlog signal, not a reason to mint a new
+  entity by name alone.
 
 ## References
 

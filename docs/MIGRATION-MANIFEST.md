@@ -69,31 +69,31 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `docs/providers/capology.md`             | `docs/providers/capology.md`            | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/clubelo.md`              | `docs/providers/clubelo.md`             | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/datafactory.md`          | `docs/providers/datafactory.md`         | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/fbref.md`                | `docs/providers/fbref.md`               | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/fbref.md`                | `docs/providers/fbref.md`               | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/football-data-co-uk.md`  | `docs/providers/football-data-co-uk.md` | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/fotmob.md`               | `docs/providers/fotmob.md`              | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/fotmob.md`               | `docs/providers/fotmob.md`              | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/fpl.md`                  | `docs/providers/fpl.md`                 | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/hawkeye.md`              | `docs/providers/hawkeye.md`             | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/impect-ecosystem.md`     | `docs/providers/impect.md`              | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/livesport.md`            | `docs/providers/livesport.md`           | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/metrica.md`              | `docs/providers/metrica.md`             | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/opta.md`                 | `docs/providers/opta.md`                | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/opta.md`                 | `docs/providers/opta.md`                | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/pff.md`                  | `docs/providers/pff.md`                 | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/secondspectrum.md`       | `docs/providers/secondspectrum.md`      | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/signality.md`            | `docs/providers/signality.md`           | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/skillcorner-tracking.md` | `docs/providers/skillcorner.md`         | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/soccerdonna.md`          | `docs/providers/soccerdonna.md`         | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/soccerdonna.md`          | `docs/providers/soccerdonna.md`         | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/sofifa.md`               | `docs/providers/sofifa.md`              | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/sportec.md`              | `docs/providers/sportec.md`             | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/sportmonks.md`           | `docs/providers/sportmonks.md`          | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/sportmonks.md`           | `docs/providers/sportmonks.md`          | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/sportradar.md`           | `docs/providers/sportradar.md`          | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/statsbomb.md`            | `docs/providers/statsbomb.md`           | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/thesportsdb.md`          | `docs/providers/thesportsdb.md`         | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/thesportsdb.md`          | `docs/providers/thesportsdb.md`         | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/tracab.md`               | `docs/providers/tracab.md`              | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/transfermarkt.md`        | `docs/providers/transfermarkt.md`       | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/transfermarkt.md`        | `docs/providers/transfermarkt.md`       | `rewrite`   | pass               | checked         | docs review          |
 | `docs/providers/understat.md`            | `docs/providers/understat.md`           | `rewrite`   | pending            | needs_source    | docs review          |
 | `docs/providers/whoscored.md`            | `docs/providers/whoscored.md`           | `rewrite`   | pending            | needs_source    | docs review          |
-| `docs/providers/wikidata.md`             | `docs/providers/wikidata.md`            | `rewrite`   | pending            | needs_source    | docs review          |
+| `docs/providers/wikidata.md`             | `docs/providers/wikidata.md`            | `rewrite`   | pass               | checked         | docs review          |
 
 ## Fixtures And Schemas
 

@@ -32,9 +32,9 @@ affect register maintenance.
 | Opta / Stats Perform | review-ready | Commercial authority        | Modern event-data IDs and multiple Opta namespaces.     | [opta.md](opta.md)                   |
 | SportMonks           | review-ready | Paid API bridge source      | Transfermarkt bridges on many player/team records.      | [sportmonks.md](sportmonks.md)       |
 | FotMob               | review-ready | Signal-rich app source      | Broad active coverage; no direct bridge IDs.            | [fotmob.md](fotmob.md)               |
-| FBref                | draft        | Public stats bridge         | Stable Sports Reference IDs plus community TM bridge.   | [fbref.md](fbref.md)                 |
-| TheSportsDB          | draft        | Community API               | Wikipedia-to-Wikidata bridge and multi-provider fields. | [thesportsdb.md](thesportsdb.md)     |
-| Soccerdonna          | draft        | Women's-football specialist | Dedicated women's football player/team/coach IDs.       | [soccerdonna.md](soccerdonna.md)     |
+| FBref                | review-ready | Public stats bridge         | Stable Sports Reference IDs plus community TM bridge.   | [fbref.md](fbref.md)                 |
+| TheSportsDB          | review-ready | Community API               | Wikipedia-to-Wikidata bridge and multi-provider fields. | [thesportsdb.md](thesportsdb.md)     |
+| Soccerdonna          | review-ready | Women's-football specialist | Dedicated women's football player/team/coach IDs.       | [soccerdonna.md](soccerdonna.md)     |
 
 ## Queued Cards
 

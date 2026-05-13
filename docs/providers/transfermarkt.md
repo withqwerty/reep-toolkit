@@ -3,7 +3,7 @@ doc_type: provider_card
 content_lane: reference
 status: review_ready
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-13
 site_section: providers
 stance: descriptive
 contribution_model: evidence_required
@@ -55,14 +55,26 @@ competitions, and matches have different URL families and sometimes separate ID 
 
 ## Matching Surface
 
-| Field            | Use                         | Gotcha                                                          |
-| ---------------- | --------------------------- | --------------------------------------------------------------- |
-| Transfermarkt ID | Strong bridge.              | Carry entity type; player and manager IDs are different spaces. |
-| Name             | Display and alias evidence. | URL slugs may be transliterated; page names keep accents.       |
-| Date of birth    | Strong player/coach signal. | Profile formats are day-first in European style.                |
-| Nationality      | Corroboration.              | Multiple citizenships are common.                               |
-| Club/team ID     | Team context.               | Loans and current-club fields are point-in-time.                |
-| Competition code | Competition bridge.         | Codes like `GB1`, `KOR1`, `CLI` are provider-specific.          |
+| Field            | Use                                     | Gotcha                                                          |
+| ---------------- | --------------------------------------- | --------------------------------------------------------------- |
+| Transfermarkt ID | Strong bridge.                          | Carry entity type; player and manager IDs are different spaces. |
+| Name             | Display and alias evidence.             | URL slugs may be transliterated; page names keep accents.       |
+| Birth/legal name | Strong secondary person signal.         | Present only on some profiles.                                  |
+| Date of birth    | Strong player/coach signal.             | Profile formats are day-first in European style.                |
+| Nationality      | Corroboration.                          | Multiple citizenships are common.                               |
+| Club/team ID     | Team context.                           | Loans and current-club fields are point-in-time.                |
+| Position/height  | Weak corroboration after identity gate. | Position taxonomy is granular; heights use comma decimals.      |
+| Competition code | Competition bridge.                     | Codes like `GB1`, `KOR1`, `CLI` are provider-specific.          |
+| Match report ID  | Fixture bridge.                         | Dates can reflect the original schedule rather than play date.  |
+
+## Bridge Surface
+
+| Bridge route               | Use                                          | Caution                                                          |
+| -------------------------- | -------------------------------------------- | ---------------------------------------------------------------- |
+| Wikidata → Transfermarkt   | Broadest public bridge route.                | Keep player, manager, team, and competition properties distinct. |
+| SportMonks → Transfermarkt | Strong player/team bridge when field exists. | Bridge coverage is not universal.                                |
+| FBref → Transfermarkt      | Useful public community mapping.             | Treat mapping dataset version as provenance.                     |
+| FPL → Transfermarkt        | Useful Premier League player bridge.         | Current/recent PL bias.                                          |
 
 ## Reep-Style Linking Advice
 
@@ -108,6 +120,10 @@ competitions, and matches have different URL families and sometimes separate ID 
 - Height and dates use European display formats on pages.
 - Current team is a moving field, especially during loans and transfer windows.
 - Academy and lower-tier players may have incomplete biographical fields.
+- Historical fixture pages and schedule views can retain the original scheduled date
+  after TV, policing, weather, or other moves. Use a named fixture-date exception only
+  when competition, season, home team, away team, and otherwise-unbridged match ID all
+  line up.
 
 ## References
 
