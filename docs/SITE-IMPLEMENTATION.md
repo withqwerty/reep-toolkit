@@ -206,8 +206,8 @@ moved.
 
 ### Migration Manifest
 
-Before files move, create a migration manifest that inventories every relevant
-`reep-scripts` source:
+Before files move, maintain [MIGRATION-MANIFEST.md](MIGRATION-MANIFEST.md) so it
+inventories every relevant `reep-scripts` source:
 
 - all Markdown docs;
 - provider docs and catalogues;
@@ -429,7 +429,7 @@ The home page should help readers choose a path:
 
 ### Phase 1: Decision And Skeleton
 
-- Confirm Starlight or hosted-docs choice.
+- Use Starlight as the site engine.
 - Add site dependencies and build command.
 - Keep Markdown content as source.
 - Add navigation and search.
@@ -442,10 +442,10 @@ Done when:
 - current Markdown checks still pass;
 - the repo boundary says `reep-toolkit` is the canonical public docs/reference-code
   surface.
-- the migration manifest exists and covers docs, fixtures, schemas, selected modules,
-  tests, and package/build artefacts from `reep-scripts`;
-- `football-docs` has an explicit launch boundary: source backend, migrated public
-  content, or deferred non-public material.
+- [MIGRATION-MANIFEST.md](MIGRATION-MANIFEST.md) exists and covers docs, fixtures,
+  schemas, selected modules, tests, and package/build artefacts from `reep-scripts`;
+- [FOOTBALL-DOCS-BOUNDARY.md](FOOTBALL-DOCS-BOUNDARY.md) defines the explicit launch
+  boundary: source backend, migrated public content, or deferred non-public material.
 
 ### Phase 2: Provider Consolidation
 
@@ -511,13 +511,13 @@ Done when:
 
 ## Open Decisions
 
-1. Site engine: Starlight for control, or a hosted docs product for speed?
-2. Should provider docs keep one page per provider, or split large providers into
+1. Should provider docs keep one page per provider, or split large providers into
    identity surfaces, access model, quirks, and examples?
 
 ## Settled Decisions
 
 - Keep the public name `reep-toolkit` for now.
+- Use Astro Starlight for the public docs site.
 - Make `reep-toolkit` the canonical public docs/reference-code repo.
 - Archive `reep-scripts` after migration rather than maintaining a compatibility
   package.
