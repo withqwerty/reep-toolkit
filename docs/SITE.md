@@ -20,6 +20,10 @@ Build the first website as a static documentation site over this repository. The
 are the product: contributors edit Markdown, CI validates metadata and links, and the
 site renders the same files without a separate CMS.
 
+The current implementation uses Astro Starlight. Source Markdown remains in `docs/`,
+top-level contributor files, and `README.md`; generated Starlight content is written to
+`src/content/docs/` by `npm run site:sync` and is not edited by hand.
+
 Recommended V1 shape:
 
 | Area              | Treatment                                                                    |

@@ -3,13 +3,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "npm run format:check && npm run docs:check",
+    "check": "npm run format:check && npm run docs:check && npm run site:build",
     "docs:catalogue": "python3 scripts/generate-examples-catalogue.py",
     "docs:check": "python3 scripts/check-docs.py && python3 scripts/check-public-boundary.py",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "site:build": "npm run site:sync && astro build",
+    "site:dev": "npm run site:sync && astro dev",
+    "site:sync": "python3 scripts/sync-starlight-docs.py"
   },
   "devDependencies": {
     "prettier": "3.8.3"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.39.2",
+    "astro": "^6.3.1"
   }
 }

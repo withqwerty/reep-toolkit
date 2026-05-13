@@ -33,6 +33,9 @@ guide tells you what to do with that knowledge when building or maintaining a re
   guidance, examples, and schema changes.
 - [Guide site model](SITE.md): how front matter maps to site sections, search facets,
   and publication rules.
+- [Site implementation plan](SITE-IMPLEMENTATION.md): proposed combined docs site,
+  reference-code layout, migration plan from `reep-scripts`, automation, and open
+  decisions.
 - [Front matter taxonomy](FRONTMATTER.md): metadata keys used by docs and future site
   tooling.
 - [Editorial standard](EDITORIAL.md): how to keep the docs sharp, public-safe, and

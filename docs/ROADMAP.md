@@ -37,18 +37,21 @@ Scope:
 
 ## Review Gate
 
-Before promoting this to a public repository or folding it into `reep-scripts`, review:
+Before promoting this as the public toolkit site, review:
 
 - whether the public/private boundary is strict enough,
 - whether Reep is positioned as a case study rather than a hidden dependency,
 - whether the front matter keys are sufficient for search and contribution workflows,
 - whether the reference schema is helpful without over-prescribing Reep internals,
-- which provider cards should be migrated first.
+- which provider cards should be migrated first;
+- which `reep-scripts` docs, examples, fixtures, and schemas should be migrated before
+  that repo is frozen or archived.
 
 ## Next Work
 
 1. Reconcile this draft against `../reep-scripts`.
 2. Promote queued provider cards from the catalogue in priority order.
 3. Turn the worked examples into runnable examples once the document shape is accepted.
-4. Add a generated search index or static-site build if this becomes a public site.
+4. Expand the Starlight site with generated catalogues and any custom browsing surfaces
+   that Markdown/front matter cannot cover cleanly.
 5. Keep private breadcrumbs out of public docs as provider cards are migrated.

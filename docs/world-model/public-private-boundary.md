@@ -48,14 +48,14 @@ Public wording:
 
 ## Adjacent Repository Map
 
-| Surface                    | Role                                                 | Boundary                                                                                                                                                        |
-| -------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `reep-toolkit`             | Public docs and examples for football identity work. | Explains reusable judgement; does not ship the library implementation or private Reep operations.                                                               |
-| `reep-scripts`             | Public Python library.                               | Owns loaders, normalisers, registry protocols, matchers, evidence/candidate shapes, and reusable templates.                                                     |
-| `reep-matching-logic-pack` | Private partner pack.                                | Shows source-authority playbooks, review behaviour, validator logic, and sample write sets without exposing credentials, raw paid data, or production commands. |
-| `reep-register-next`       | Private Reep Next control plane.                     | Owns actual doctrine artefacts, canonical-feed assignments, mint salts, action ledgers, review DB state, projections, and publish gates.                        |
+| Surface                    | Role                                                                              | Boundary                                                                                                                                                        |
+| -------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `reep-toolkit`             | Public docs, examples, schemas, and reference scripts for football identity work. | Explains reusable judgement and small implementation patterns; does not ship private Reep operations.                                                           |
+| `reep-scripts`             | Legacy migration input.                                                           | Useful docs, examples, schemas, fixtures, and small patterns should be folded into the toolkit; package promises should be dropped.                             |
+| `reep-matching-logic-pack` | Private partner pack.                                                             | Shows source-authority playbooks, review behaviour, validator logic, and sample write sets without exposing credentials, raw paid data, or production commands. |
+| `reep-register-next`       | Private Reep Next control plane.                                                  | Owns actual doctrine artefacts, canonical-feed assignments, mint salts, action ledgers, review DB state, projections, and publish gates.                        |
 
-If a contribution is primarily runnable code, it probably belongs in `reep-scripts`. If
-it is a public explanation or example, keep it here. If it needs partner context or
-operating-model depth, keep it in the logic pack. If it depends on private Reep state,
-it stays in `reep-register-next`.
+If a contribution is public explanation, provider knowledge, a schema, a fixture, or a
+copyable reference script, keep it here. If it needs partner context or operating-model
+depth, keep it in the logic pack. If it depends on private Reep state, it stays in
+`reep-register-next`.

@@ -20,12 +20,16 @@ REQUIRED_FRONT_MATTER_KEYS = (
     "contribution_model",
 )
 EXAMPLE_FRONT_MATTER_KEYS = ("failure_mode", "decision", "search_tags")
-SKIP_PARTS = {".git", ".history", "node_modules"}
+SKIP_PARTS = {".git", ".history", "node_modules", "dist", ".astro"}
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 
 def should_skip(path: Path) -> bool:
-    return bool(SKIP_PARTS.intersection(path.parts))
+    return bool(SKIP_PARTS.intersection(path.parts)) or path.parts[:3] == (
+        "src",
+        "content",
+        "docs",
+    )
 
 
 def split_front_matter(path: Path, text: str) -> tuple[dict[str, str], str]:

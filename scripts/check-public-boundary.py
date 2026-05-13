@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP_PARTS = {".git", ".history", "node_modules"}
+SKIP_PARTS = {".git", ".history", "node_modules", "dist", ".astro"}
 CHECK_SUFFIXES = {".md", ".py", ".yml", ".yaml", ".json", ".sql"}
 
 FORBIDDEN_PATTERNS = {
@@ -27,6 +27,7 @@ def should_skip(path: Path) -> bool:
     relative = path.relative_to(ROOT)
     return (
         bool(SKIP_PARTS.intersection(relative.parts))
+        or relative.parts[:3] == ("src", "content", "docs")
         or path.suffix not in CHECK_SUFFIXES
         or relative == Path("scripts/check-public-boundary.py")
     )
