@@ -46,14 +46,14 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | Source path                        | Destination                                                 | Disposition   | Public-safe review | Evidence status | Verification           |
 | ---------------------------------- | ----------------------------------------------------------- | ------------- | ------------------ | --------------- | ---------------------- |
 | `README.md`                        | `README.md`                                                 | `rewrite`     | pass               | checked         | docs review            |
-| `CONTRIBUTING.md`                  | `CONTRIBUTING.md`                                           | `rewrite`     | pending            | not_applicable  | docs review            |
-| `CHANGELOG.md`                     | none                                                        | `archive`     | pending            | not_applicable  | none                   |
+| `CONTRIBUTING.md`                  | `CONTRIBUTING.md`                                           | `rewrite`     | pass               | checked         | docs review            |
+| `CHANGELOG.md`                     | none                                                        | `archive`     | pass               | not_applicable  | freeze-plan review     |
 | `docs/architecture.md`             | `docs/pipelines/architecture.md`                            | `rewrite`     | pass               | checked         | docs review            |
 | `docs/cross-provider-matching.md`  | `docs/guides/relationship-constrained-provider-matching.md` | `rewrite`     | pass               | checked         | docs review            |
 | `docs/identity/evidence-schema.md` | `docs/templates/evidence-schema.md`                         | `rewrite`     | pass               | synthetic_only  | schema validation      |
 | `docs/matching-field-alignment.md` | `docs/guides/matching-thresholds.md`                        | `rewrite`     | pass               | checked         | docs review            |
 | `docs/matching.md`                 | `docs/guides/bridging-provider-ids.md`                      | `rewrite`     | pass               | checked         | docs review            |
-| `docs/reep-next.md`                | none                                                        | `source_only` | pending            | not_applicable  | public-boundary review |
+| `docs/reep-next.md`                | none                                                        | `source_only` | pass               | checked         | public-boundary review |
 | `docs/schema.md`                   | `docs/schemas/README.md`                                    | `rewrite`     | pass               | synthetic_only  | schema validation      |
 | `docs/templates/README.md`         | `docs/templates/README.md`                                  | `rewrite`     | pass               | checked         | fixture smoke test     |
 
@@ -107,7 +107,7 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `fixtures/templates/relationship-constrained-candidate.json` | `fixtures/templates/relationship-constrained-candidate.json` | `migrate`     | pass               | synthetic_only  | fixture smoke test |
 | `fixtures/templates/split-season-stage-candidates.json`      | `fixtures/templates/split-season-stage-candidates.json`      | `migrate`     | pass               | synthetic_only  | fixture smoke test |
 | `schemas/reference-schema.sql`                               | `schemas/reference-register.sql`                             | `rewrite`     | pass               | synthetic_only  | schema validation  |
-| `schemas/migrations/0001_add_lineage_columns.sql`            | none                                                         | `source_only` | pending            | synthetic_only  | schema review      |
+| `schemas/migrations/0001_add_lineage_columns.sql`            | none                                                         | `source_only` | pass               | synthetic_only  | schema review      |
 
 ## Python Source Families
 
@@ -139,16 +139,31 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 
 ## Package And Build Metadata
 
-| Source path                           | Destination | Disposition   | Public-safe review | Evidence status | Verification |
-| ------------------------------------- | ----------- | ------------- | ------------------ | --------------- | ------------ |
-| `pyproject.toml`                      | none        | `drop`        | pending            | not_applicable  | none         |
-| `.github/workflows/test.yml`          | none        | `source_only` | pending            | not_applicable  | CI review    |
-| `.gitignore`                          | none        | `source_only` | pending            | not_applicable  | none         |
-| `LICENSE`                             | `LICENSE`   | `migrate`     | pending            | not_applicable  | docs review  |
-| `reep_scripts.egg-info/PKG-INFO`      | none        | `archive`     | pending            | not_applicable  | none         |
-| `reep_scripts.egg-info/SOURCES.txt`   | none        | `archive`     | pending            | not_applicable  | none         |
-| `reep_scripts.egg-info/requires.txt`  | none        | `archive`     | pending            | not_applicable  | none         |
-| `reep_scripts.egg-info/top_level.txt` | none        | `archive`     | pending            | not_applicable  | none         |
+| Source path                           | Destination | Disposition   | Public-safe review | Evidence status | Verification       |
+| ------------------------------------- | ----------- | ------------- | ------------------ | --------------- | ------------------ |
+| `pyproject.toml`                      | none        | `drop`        | pass               | not_applicable  | freeze-plan review |
+| `.github/workflows/test.yml`          | none        | `source_only` | pass               | not_applicable  | CI review          |
+| `.gitignore`                          | none        | `source_only` | pass               | not_applicable  | freeze-plan review |
+| `LICENSE`                             | `LICENSE`   | `migrate`     | pass               | checked         | docs review        |
+| `reep_scripts.egg-info/PKG-INFO`      | none        | `archive`     | pass               | not_applicable  | freeze-plan review |
+| `reep_scripts.egg-info/SOURCES.txt`   | none        | `archive`     | pass               | not_applicable  | freeze-plan review |
+| `reep_scripts.egg-info/requires.txt`  | none        | `archive`     | pass               | not_applicable  | freeze-plan review |
+| `reep_scripts.egg-info/top_level.txt` | none        | `archive`     | pass               | not_applicable  | freeze-plan review |
+
+## Freeze Plan
+
+`reep-scripts` should now freeze as an archived source surface rather than a live
+installable package. The migration has moved the useful public material into
+`reep-toolkit` as docs, fixtures, schemas, and copy-paste reference scripts. The
+remaining package files are historical evidence only.
+
+Follow-up work in the `reep-scripts` repo should:
+
+1. Replace the README with a short archive/deprecation note that points to
+   `reep-toolkit`.
+2. Keep the old changelog and package metadata as historical context.
+3. Avoid publishing new package releases unless a separate decision revives the package.
+4. Mark the repository archived or read-only after the README note lands.
 
 ## Phase 2 Provider Priority
 
