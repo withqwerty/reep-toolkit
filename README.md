@@ -113,11 +113,15 @@ Current cards:
 - [Wikidata](docs/providers/wikidata.md)
 - [Transfermarkt](docs/providers/transfermarkt.md)
 - [Opta](docs/providers/opta.md)
+- [StatsBomb](docs/providers/statsbomb.md)
 - [SportMonks](docs/providers/sportmonks.md)
+- [WhoScored](docs/providers/whoscored.md)
 - [FBref](docs/providers/fbref.md)
 - [FotMob](docs/providers/fotmob.md)
 - [TheSportsDB](docs/providers/thesportsdb.md)
 - [Soccerdonna](docs/providers/soccerdonna.md)
+- [SkillCorner](docs/providers/skillcorner.md)
+- [Impect ecosystem](docs/providers/impect.md)
 
 Use the [provider template](docs/providers/_template.md) for new cards and the
 [provider catalogue](docs/providers/CATALOGUE.md) to see coverage.
