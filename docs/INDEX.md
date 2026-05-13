@@ -105,6 +105,11 @@ guide tells you what to do with that knowledge when building or maintaining a re
 - [Portable templates](templates/README.md): synthetic candidate, evidence, blocker, and
   review-residue payloads.
 
+## Schemas
+
+- [Reference register schema](schemas/README.md): optional SQLite-shaped schema for
+  examples and small deployments.
+
 ## Examples
 
 - [Examples catalogue](examples/CATALOGUE.md): generated table of failure modes,

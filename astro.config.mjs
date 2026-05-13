@@ -70,6 +70,10 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "templates" } }],
         },
         {
+          label: "Schemas",
+          items: [{ autogenerate: { directory: "schemas" } }],
+        },
+        {
           label: "Pipeline Patterns",
           items: [{ autogenerate: { directory: "pipelines" } }],
         },

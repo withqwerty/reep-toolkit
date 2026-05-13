@@ -44,6 +44,7 @@ For the full documentation map, use [docs/INDEX.md](docs/INDEX.md).
 docs/
 ├── guides/        # opinionated register practice
 ├── providers/     # provider world models, quirks, and ID semantics
+├── schemas/       # reference schema docs
 ├── templates/     # public-safe candidate and evidence payload shapes
 ├── world-model/   # entity, ID, source-authority, confidence, and lineage doctrine
 ├── pipelines/     # loader, matcher, registry, snapshot, and write patterns

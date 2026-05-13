@@ -54,7 +54,7 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `docs/matching-field-alignment.md` | `docs/guides/matching-thresholds.md`                        | `rewrite`     | pending            | not_applicable  | docs review            |
 | `docs/matching.md`                 | `docs/guides/bridging-provider-ids.md`                      | `rewrite`     | pending            | not_applicable  | docs review            |
 | `docs/reep-next.md`                | none                                                        | `source_only` | pending            | not_applicable  | public-boundary review |
-| `docs/schema.md`                   | `docs/schemas/README.md`                                    | `rewrite`     | pending            | synthetic_only  | schema validation      |
+| `docs/schema.md`                   | `docs/schemas/README.md`                                    | `rewrite`     | pass               | synthetic_only  | schema validation      |
 | `docs/templates/README.md`         | `docs/templates/README.md`                                  | `rewrite`     | pass               | checked         | fixture smoke test     |
 
 ## Provider Docs
@@ -106,7 +106,7 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `fixtures/templates/match-bridge-candidate.json`             | `fixtures/templates/match-bridge-candidate.json`             | `migrate`     | pass               | synthetic_only  | fixture smoke test |
 | `fixtures/templates/relationship-constrained-candidate.json` | `fixtures/templates/relationship-constrained-candidate.json` | `migrate`     | pass               | synthetic_only  | fixture smoke test |
 | `fixtures/templates/split-season-stage-candidates.json`      | `fixtures/templates/split-season-stage-candidates.json`      | `migrate`     | pass               | synthetic_only  | fixture smoke test |
-| `schemas/reference-schema.sql`                               | `schemas/reference-register.sql`                             | `rewrite`     | pending            | synthetic_only  | schema validation  |
+| `schemas/reference-schema.sql`                               | `schemas/reference-register.sql`                             | `rewrite`     | pass               | synthetic_only  | schema validation  |
 | `schemas/migrations/0001_add_lineage_columns.sql`            | none                                                         | `source_only` | pending            | synthetic_only  | schema review      |
 
 ## Python Source Families
