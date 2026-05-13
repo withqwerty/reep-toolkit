@@ -27,6 +27,22 @@ provenance, not as anonymous key-value pairs.
 | Signal-derived bridge    | Matcher infers ID from DOB/name/team context.                      | Store with method and confidence.                           |
 | Slug or URL bridge       | Provider URL segment or mutable slug.                              | Treat as weak unless scheme stability is documented.        |
 
+## Common Bridge Routes
+
+| Route                                        | Typical use                                                  | Caution                                                                        |
+| -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Provider -> Transfermarkt -> target register | Football-wide player, team, coach, and competition matching. | Transfermarkt IDs are type-scoped; do not let player/team numeric IDs collide. |
+| Provider -> Wikidata -> target register      | Public cross-provider bridges where Wikidata has a property. | Wikidata properties can be wrong, stale, or uneven by region/gender.           |
+| TheSportsDB -> Wikidata or Transfermarkt     | Public fan API records with explicit external fields.        | Coverage is crowd-edited and partial.                                          |
+| SportMonks -> Transfermarkt                  | Paid API metadata rows that carry TM IDs.                    | Verify entity type and namespace.                                              |
+| FPL -> `opta_numeric`                        | Premier League players and teams.                            | `opta_numeric` is not the modern Opta UUID namespace.                          |
+| Community bridge CSV -> hub provider         | FBref/TM and FPL-related mappings.                           | Measure false positives and require corroboration where possible.              |
+
+When a pair is not directly listed, prefer routing through a typed hub over inventing a
+new fuzzy path. If both sides can independently resolve to the same target-register
+entity, joining on the target ID is usually safer than matching provider A directly to
+provider B.
+
 ## Canonical Provider Names
 
 Use one canonical provider namespace per provider. Do not encode entity type into the

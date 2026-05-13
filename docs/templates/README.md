@@ -18,6 +18,8 @@ private doctrine.
 Use these artefacts when you want a stable output shape for candidates, evidence,
 blockers, and review residue in your own register or notebook.
 
+For the field-level shape, see [Evidence Payload Schema](evidence-schema.md).
+
 ## Included Fixtures
 
 | Fixture                                                                                                                          | Pattern                                                                                                       |

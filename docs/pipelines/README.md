@@ -29,3 +29,10 @@ should not care.
 - Review queues preserve uncertainty.
 - Writes include lineage.
 - Snapshots make reruns reproducible.
+
+## Architecture
+
+The pipeline is deliberately modular. A project can replace the storage layer, review
+surface, or writer without changing provider matching logic. See
+[Pipeline Architecture](architecture.md) for the component boundaries and the
+template-versus-recipe distinction.

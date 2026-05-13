@@ -60,3 +60,19 @@ A typical match cascade:
 
 Matchers should not write to the register. This keeps them reusable, testable, and safe
 to run as dry-run audits.
+
+## Method Labels
+
+Every candidate should carry a method label that explains the path:
+
+- `bridge:transfermarkt`
+- `bridge:wikidata`
+- `dob+name`
+- `dob+alias`
+- `name+country`
+- `fixture_tuple+team_bridge`
+- `relationship_constrained`
+
+The exact vocabulary can be project-specific, but it should be stable enough to audit
+later. If two matcher versions use the same label but different logic, bump the matcher
+version or split the label.

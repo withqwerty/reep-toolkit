@@ -92,6 +92,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
 
 - [Pipeline overview](pipelines/README.md): snapshot, load, match, review, write,
   export.
+- [Pipeline architecture](pipelines/architecture.md): component boundaries,
+  template-versus-recipe distinction, and reproducibility contract.
 - [Loaders](pipelines/loaders.md): normalising provider-native records into stable
   shapes.
 - [Registries](pipelines/registries.md): target-store lookup interfaces.
@@ -104,6 +106,8 @@ guide tells you what to do with that knowledge when building or maintaining a re
 
 - [Portable templates](templates/README.md): synthetic candidate, evidence, blocker, and
   review-residue payloads.
+- [Evidence payload schema](templates/evidence-schema.md): JSON fields used by
+  candidate, evidence, relationship, blocker, and review-residue fixtures.
 
 ## Schemas
 

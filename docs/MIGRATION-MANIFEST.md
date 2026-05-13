@@ -48,11 +48,11 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `README.md`                        | `README.md`                                                 | `rewrite`     | pass               | checked         | docs review            |
 | `CONTRIBUTING.md`                  | `CONTRIBUTING.md`                                           | `rewrite`     | pending            | not_applicable  | docs review            |
 | `CHANGELOG.md`                     | none                                                        | `archive`     | pending            | not_applicable  | none                   |
-| `docs/architecture.md`             | `docs/pipelines/architecture.md`                            | `rewrite`     | pending            | not_applicable  | docs review            |
-| `docs/cross-provider-matching.md`  | `docs/guides/relationship-constrained-provider-matching.md` | `rewrite`     | pending            | not_applicable  | docs review            |
-| `docs/identity/evidence-schema.md` | `docs/templates/evidence-schema.md`                         | `rewrite`     | pending            | synthetic_only  | schema validation      |
-| `docs/matching-field-alignment.md` | `docs/guides/matching-thresholds.md`                        | `rewrite`     | pending            | not_applicable  | docs review            |
-| `docs/matching.md`                 | `docs/guides/bridging-provider-ids.md`                      | `rewrite`     | pending            | not_applicable  | docs review            |
+| `docs/architecture.md`             | `docs/pipelines/architecture.md`                            | `rewrite`     | pass               | checked         | docs review            |
+| `docs/cross-provider-matching.md`  | `docs/guides/relationship-constrained-provider-matching.md` | `rewrite`     | pass               | checked         | docs review            |
+| `docs/identity/evidence-schema.md` | `docs/templates/evidence-schema.md`                         | `rewrite`     | pass               | synthetic_only  | schema validation      |
+| `docs/matching-field-alignment.md` | `docs/guides/matching-thresholds.md`                        | `rewrite`     | pass               | checked         | docs review            |
+| `docs/matching.md`                 | `docs/guides/bridging-provider-ids.md`                      | `rewrite`     | pass               | checked         | docs review            |
 | `docs/reep-next.md`                | none                                                        | `source_only` | pending            | not_applicable  | public-boundary review |
 | `docs/schema.md`                   | `docs/schemas/README.md`                                    | `rewrite`     | pass               | synthetic_only  | schema validation      |
 | `docs/templates/README.md`         | `docs/templates/README.md`                                  | `rewrite`     | pass               | checked         | fixture smoke test     |

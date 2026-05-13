@@ -79,3 +79,16 @@ Examples:
 - require country for team matches,
 - allow a single token-subset match only if all other candidates are absent,
 - scope match lookup by season when multiple fixtures share date and teams.
+
+## Lookup Families
+
+Most registries need three lookup families:
+
+| Lookup              | Example                                                     | Expected behaviour                                       |
+| ------------------- | ----------------------------------------------------------- | -------------------------------------------------------- |
+| Bridge lookup       | `(provider=transfermarkt, external_id=568177, type=player)` | Return exactly one live target or no result.             |
+| Signal lookup       | `name + date_of_birth + nationality`                        | Reject ambiguity rather than picking a best-looking row. |
+| Relationship lookup | `match_date + home_team_id + away_team_id + competition_id` | Use resolved parent entities to narrow candidates.       |
+
+The matcher should not know whether the registry is backed by SQLite, Postgres, CSV
+fixtures, or a service. It only needs deterministic lookup semantics.

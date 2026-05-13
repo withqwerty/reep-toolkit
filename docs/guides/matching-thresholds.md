@@ -40,6 +40,34 @@ contaminate every downstream export.
 
 These values are labels for routing work. They are not calibrated probabilities.
 
+## Signal Floors
+
+The minimum evidence should rise with the risk of the write.
+
+| Target posture            | Minimum evidence                                                                                | Default route                                |
+| ------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Public canonical register | Direct typed bridge with uniqueness checks, or bridge plus independent DOB/name confirmation.   | Auto-write only when conflict checks pass.   |
+| Production analytics      | One strong bridge with confirmation, or DOB plus normalised name plus nationality/team context. | Auto-write or review depending on ambiguity. |
+| Internal exploration      | DOB plus name, or exact name plus nationality/team context.                                     | Review before sharing beyond the notebook.   |
+| Discovery/search          | Name-only, slug-only, or current-team context only.                                             | Candidate only.                              |
+
+Do not combine two weak name-only signals into one strong result unless they are
+independent and disambiguating. Two providers can share the same upstream error.
+
+## Field Strength
+
+| Signal                           | Relative strength | Notes                                                                  |
+| -------------------------------- | ----------------- | ---------------------------------------------------------------------- |
+| Typed provider bridge            | Highest           | Strong only when namespace and entity type are clear.                  |
+| Wikidata QID or other public hub | High              | Public and inspectable, but community-maintained.                      |
+| Exact DOB                        | High              | Reject imprecise dates before DOB-gating.                              |
+| Full name or alias               | High with DOB     | Needs normalisation and alias splitting.                               |
+| Nationality/country              | Medium            | Multi-nationality and historical country labels complicate comparison. |
+| Current team                     | Medium/weak       | Transfers, loans, and stale provider rows make it time-sensitive.      |
+| Position                         | Weak              | Useful tie-breaker only.                                               |
+| Height/foot/shirt number         | Weak              | Helpful in ambiguous cases, never enough alone.                        |
+| Slug/display name                | Weakest           | Candidate generation only unless another signal confirms.              |
+
 ## Auto-Write Requirements
 
 An auto-write needs all of:
