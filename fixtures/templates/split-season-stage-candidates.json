@@ -1,0 +1,69 @@
+[
+  {
+    "candidate_id": "example_feed:season:season-2026",
+    "entity_type": "season",
+    "provider": "example_feed",
+    "external_id": "season-2026",
+    "target_label": "2026",
+    "method": "split-season-stage-template",
+    "status": "review",
+    "evidence": [
+      {
+        "provider": "example_feed",
+        "kind": "bridge",
+        "entity_type": "season",
+        "external_id": "season-2026",
+        "source_role": "bridge",
+        "method": "split-season-stage-template"
+      }
+    ],
+    "relationship_evidence": [
+      {
+        "provider": "example_feed",
+        "relationship_type": "competition",
+        "subject_external_id": "season-2026",
+        "object_external_id": "league-001",
+        "subject_type": "season",
+        "object_type": "competition",
+        "evidence_count": 1,
+        "method": "split-season-stage-template"
+      }
+    ],
+    "blockers": [],
+    "metadata": {}
+  },
+  {
+    "candidate_id": "example_feed:stage:stage-regular",
+    "entity_type": "stage",
+    "provider": "example_feed",
+    "external_id": "stage-regular",
+    "target_label": "Regular season",
+    "method": "split-season-stage-template",
+    "status": "review",
+    "evidence": [
+      {
+        "provider": "example_feed",
+        "kind": "name",
+        "entity_type": "stage",
+        "external_id": "stage-regular",
+        "value": "Regular season",
+        "source_role": "corroborator",
+        "method": "split-season-stage-template"
+      }
+    ],
+    "relationship_evidence": [
+      {
+        "provider": "example_feed",
+        "relationship_type": "season",
+        "subject_external_id": "stage-regular",
+        "object_external_id": "season-2026",
+        "subject_type": "stage",
+        "object_type": "season",
+        "evidence_count": 1,
+        "method": "split-season-stage-template"
+      }
+    ],
+    "blockers": [],
+    "metadata": {}
+  }
+]

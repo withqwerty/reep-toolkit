@@ -1,0 +1,20 @@
+{
+  "residue_id": "review:example_feed:player:player-ambiguous",
+  "entity_type": "player",
+  "provider": "example_feed",
+  "external_id": "player-ambiguous",
+  "reason": "two target players share the same date of birth and display name",
+  "status": "open",
+  "candidate_ids": ["candidate-a", "candidate-b"],
+  "blockers": [
+    {
+      "code": "candidate_recovery_required",
+      "message": "two target players share the same date of birth and display name",
+      "severity": "blocking",
+      "provider": "example_feed",
+      "metadata": {}
+    }
+  ],
+  "next_action": "request relationship evidence from lineups",
+  "metadata": {}
+}

@@ -55,7 +55,7 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 | `docs/matching.md`                 | `docs/guides/bridging-provider-ids.md`                      | `rewrite`     | pending            | not_applicable  | docs review            |
 | `docs/reep-next.md`                | none                                                        | `source_only` | pending            | not_applicable  | public-boundary review |
 | `docs/schema.md`                   | `docs/schemas/README.md`                                    | `rewrite`     | pending            | synthetic_only  | schema validation      |
-| `docs/templates/README.md`         | `docs/templates/README.md`                                  | `rewrite`     | pending            | synthetic_only  | fixture smoke test     |
+| `docs/templates/README.md`         | `docs/templates/README.md`                                  | `rewrite`     | pass               | checked         | fixture smoke test     |
 
 ## Provider Docs
 
@@ -99,13 +99,13 @@ below are repo-relative to `reep-scripts`; destinations are repo-relative to
 
 | Source path                                                  | Destination                                                  | Disposition   | Public-safe review | Evidence status | Verification       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------- | ------------------ | --------------- | ------------------ |
-| `fixtures/evidence/example-match-candidate.json`             | `fixtures/evidence/example-match-candidate.json`             | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/evidence/review-residue.json`                      | `fixtures/evidence/review-residue.json`                      | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/evidence/source-constraints.json`                  | `fixtures/evidence/source-constraints.json`                  | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/templates/candidate-recovery-residue.json`         | `fixtures/templates/candidate-recovery-residue.json`         | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/templates/match-bridge-candidate.json`             | `fixtures/templates/match-bridge-candidate.json`             | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/templates/relationship-constrained-candidate.json` | `fixtures/templates/relationship-constrained-candidate.json` | `migrate`     | pending            | synthetic_only  | fixture smoke test |
-| `fixtures/templates/split-season-stage-candidates.json`      | `fixtures/templates/split-season-stage-candidates.json`      | `migrate`     | pending            | synthetic_only  | fixture smoke test |
+| `fixtures/evidence/example-match-candidate.json`             | `fixtures/evidence/example-match-candidate.json`             | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/evidence/review-residue.json`                      | `fixtures/evidence/review-residue.json`                      | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/evidence/source-constraints.json`                  | `fixtures/evidence/source-constraints.json`                  | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/templates/candidate-recovery-residue.json`         | `fixtures/templates/candidate-recovery-residue.json`         | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/templates/match-bridge-candidate.json`             | `fixtures/templates/match-bridge-candidate.json`             | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/templates/relationship-constrained-candidate.json` | `fixtures/templates/relationship-constrained-candidate.json` | `migrate`     | pass               | synthetic_only  | fixture smoke test |
+| `fixtures/templates/split-season-stage-candidates.json`      | `fixtures/templates/split-season-stage-candidates.json`      | `migrate`     | pass               | synthetic_only  | fixture smoke test |
 | `schemas/reference-schema.sql`                               | `schemas/reference-register.sql`                             | `rewrite`     | pending            | synthetic_only  | schema validation  |
 | `schemas/migrations/0001_add_lineage_columns.sql`            | none                                                         | `source_only` | pending            | synthetic_only  | schema review      |
 

@@ -1,0 +1,42 @@
+{
+  "candidate_id": "example_feed:player:player-001",
+  "entity_type": "player",
+  "provider": "example_feed",
+  "external_id": "player-001",
+  "target_label": "A. Example",
+  "score": 0.91,
+  "method": "relationship-constrained-template",
+  "status": "review",
+  "evidence": [
+    {
+      "provider": "example_feed",
+      "kind": "attribute",
+      "entity_type": "player",
+      "external_id": "player-001",
+      "value": {
+        "name": "Alex Example",
+        "date_of_birth": "2001-02-03"
+      },
+      "source_role": "corroborator",
+      "method": "attribute-corroboration",
+      "confidence": 0.91
+    }
+  ],
+  "relationship_evidence": [
+    {
+      "provider": "example_feed",
+      "relationship_type": "appeared_for_team",
+      "subject_external_id": "player-001",
+      "object_external_id": "team-home",
+      "subject_type": "player",
+      "object_type": "team",
+      "evidence_count": 3,
+      "method": "lineup-overlap",
+      "confidence": 0.9
+    }
+  ],
+  "blockers": [],
+  "metadata": {
+    "template": "relationship-constrained-bridge"
+  }
+}

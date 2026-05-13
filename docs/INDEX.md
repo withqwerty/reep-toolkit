@@ -100,6 +100,11 @@ guide tells you what to do with that knowledge when building or maintaining a re
   audit fields.
 - [Snapshots](pipelines/snapshots.md): reproducible source capture and replay.
 
+## Templates
+
+- [Portable templates](templates/README.md): synthetic candidate, evidence, blocker, and
+  review-residue payloads.
+
 ## Examples
 
 - [Examples catalogue](examples/CATALOGUE.md): generated table of failure modes,

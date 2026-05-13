@@ -1,0 +1,21 @@
+{
+  "residue_id": "review:example_feed:match-2026-001",
+  "entity_type": "match",
+  "provider": "example_feed",
+  "external_id": "match-2026-001",
+  "reason": "competition context is unresolved",
+  "status": "open",
+  "candidate_ids": ["example-feed:match:2026-001"],
+  "blockers": [
+    {
+      "code": "competition_not_mapped",
+      "message": "Resolve the provider competition before accepting the fixture candidate.",
+      "severity": "blocking",
+      "provider": "example_feed"
+    }
+  ],
+  "next_action": "map competition-2026 through a public provider or route to manual review",
+  "metadata": {
+    "fixture": "synthetic public-safe example"
+  }
+}

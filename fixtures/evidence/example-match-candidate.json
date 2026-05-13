@@ -1,0 +1,62 @@
+{
+  "candidate_id": "example-feed:match:2026-001",
+  "entity_type": "match",
+  "provider": "example_feed",
+  "external_id": "match-2026-001",
+  "target_label": "Northbridge City v Eastport United",
+  "score": 0.82,
+  "method": "fixture-tuple+competition-context",
+  "status": "review",
+  "evidence": [
+    {
+      "provider": "example_feed",
+      "kind": "bridge",
+      "entity_type": "match",
+      "external_id": "match-2026-001",
+      "source_role": "canonical_feed",
+      "method": "external-id",
+      "confidence": 1.0,
+      "snapshot": "example-feed-2026-05-10"
+    },
+    {
+      "provider": "example_feed",
+      "kind": "fixture_tuple",
+      "entity_type": "match",
+      "external_id": "match-2026-001",
+      "value": {
+        "match_date": "2026-05-10",
+        "home_team": "Northbridge City",
+        "away_team": "Eastport United"
+      },
+      "source_role": "corroborator",
+      "method": "date+teams",
+      "confidence": 0.82,
+      "snapshot": "example-feed-2026-05-10"
+    }
+  ],
+  "relationship_evidence": [
+    {
+      "provider": "example_feed",
+      "relationship_type": "scheduled_competition",
+      "subject_external_id": "match-2026-001",
+      "object_external_id": "competition-2026",
+      "subject_type": "match",
+      "object_type": "competition",
+      "evidence_count": 1,
+      "method": "provider-competition-id",
+      "confidence": 0.9,
+      "snapshot": "example-feed-2026-05-10"
+    }
+  ],
+  "blockers": [
+    {
+      "code": "competition_not_mapped",
+      "message": "The provider competition ID has not resolved to a target-register competition.",
+      "severity": "blocking",
+      "provider": "example_feed"
+    }
+  ],
+  "metadata": {
+    "fixture": "synthetic public-safe example"
+  }
+}

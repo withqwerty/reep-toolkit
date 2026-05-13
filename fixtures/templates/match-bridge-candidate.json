@@ -1,0 +1,85 @@
+{
+  "candidate_id": "example_feed:match:match-001",
+  "entity_type": "match",
+  "provider": "example_feed",
+  "external_id": "match-001",
+  "target_label": "Northbridge City v Eastport United",
+  "score": 0.95,
+  "method": "match-bridge-template",
+  "status": "review",
+  "evidence": [
+    {
+      "provider": "example_feed",
+      "kind": "bridge",
+      "entity_type": "match",
+      "external_id": "match-001",
+      "source_role": "bridge",
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    },
+    {
+      "provider": "example_feed",
+      "kind": "fixture_tuple",
+      "entity_type": "match",
+      "external_id": "match-001",
+      "value": {
+        "date": "2026-05-10",
+        "home_external_id": "team-home",
+        "away_external_id": "team-away",
+        "competition_external_id": "competition-001",
+        "season_external_id": "season-2026"
+      },
+      "source_role": "corroborator",
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    }
+  ],
+  "relationship_evidence": [
+    {
+      "provider": "example_feed",
+      "relationship_type": "home_team",
+      "subject_external_id": "match-001",
+      "object_external_id": "team-home",
+      "subject_type": "match",
+      "object_type": "team",
+      "evidence_count": 1,
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    },
+    {
+      "provider": "example_feed",
+      "relationship_type": "away_team",
+      "subject_external_id": "match-001",
+      "object_external_id": "team-away",
+      "subject_type": "match",
+      "object_type": "team",
+      "evidence_count": 1,
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    },
+    {
+      "provider": "example_feed",
+      "relationship_type": "competition",
+      "subject_external_id": "match-001",
+      "object_external_id": "competition-001",
+      "subject_type": "match",
+      "object_type": "competition",
+      "evidence_count": 1,
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    },
+    {
+      "provider": "example_feed",
+      "relationship_type": "season",
+      "subject_external_id": "match-001",
+      "object_external_id": "season-2026",
+      "subject_type": "match",
+      "object_type": "season",
+      "evidence_count": 1,
+      "method": "match-bridge-template",
+      "confidence": 0.95
+    }
+  ],
+  "blockers": [],
+  "metadata": {}
+}

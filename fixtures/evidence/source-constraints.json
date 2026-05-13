@@ -1,0 +1,20 @@
+[
+  {
+    "provider": "example_feed",
+    "role": "canonical_feed",
+    "entity_types": ["match"],
+    "required_signals": ["external_id"],
+    "optional_signals": ["fixture_tuple", "competition_id", "kickoff_time"],
+    "min_confidence": 1.0,
+    "notes": "Synthetic source used to show how a caller records canonical-feed requirements."
+  },
+  {
+    "provider": "example_directory",
+    "role": "corroborator",
+    "entity_types": ["team", "competition"],
+    "required_signals": ["name"],
+    "optional_signals": ["country", "season_label", "source_url"],
+    "min_confidence": 0.8,
+    "notes": "Synthetic source used to show corroborating provider metadata."
+  }
+]

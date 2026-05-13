@@ -66,6 +66,10 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "guides" } }],
         },
         {
+          label: "Templates",
+          items: [{ autogenerate: { directory: "templates" } }],
+        },
+        {
           label: "Pipeline Patterns",
           items: [{ autogenerate: { directory: "pipelines" } }],
         },
