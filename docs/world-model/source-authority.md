@@ -3,7 +3,7 @@ doc_type: world_model
 content_lane: reference
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-19
 site_section: world-model
 stance: descriptive
 contribution_model: maintainer_doctrine
@@ -34,6 +34,16 @@ For each entity type, document:
 - which providers can add aliases or metadata only,
 - which providers require review,
 - what evidence can override stale data.
+
+## Coverage Floors
+
+Source authority should also say where the normal corroboration requirement stops being
+practical. If no independent provider covers a lower tier or cup-only band, you can
+document a coverage floor: below that level, a narrowly authorised canonical source may
+create entities without a second living-provider bridge.
+
+A coverage floor should be evidence-based, scoped, and auditable. It does not remove
+duplicate checks, type checks, provenance, or later correction paths.
 
 ## Public Versus Private Authority
 

@@ -3,7 +3,7 @@ doc_type: example
 content_lane: example
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-19
 site_section: examples
 stance: illustrative
 contribution_model: example_patch
@@ -42,7 +42,13 @@ event, odds, line-up, and stats feeds can all reference.
 
 ## Match Lookup
 
-Search:
+Use the provider's stable match ID as the candidate identity key:
+
+```text
+example_events:evt-7788
+```
+
+Then use the fixture tuple as a resolution and corroboration gate:
 
 ```text
 match_date = 2026-02-14
@@ -59,16 +65,20 @@ Candidate:
 
 ## Decision
 
-| Method                   | Outcome                                     | Confidence | Write? |
-| ------------------------ | ------------------------------------------- | ---------: | ------ |
-| `date+teams+competition` | attach `example_events:evt-7788` to `m_001` |     `0.95` | yes    |
+| Identity key              | Corroboration gate         | Outcome                                     | Write? |
+| ------------------------- | -------------------------- | ------------------------------------------- | ------ |
+| `example_events:evt-7788` | date + teams + competition | attach `example_events:evt-7788` to `m_001` | yes    |
 
 ## Bad Shortcut
 
-Do not mint a new match only because an event payload has a new `match_id`. First check
-whether the fixture already exists by date and resolved teams.
+Do not mint from the date/home/away tuple alone. It is a powerful gate, but reschedules,
+neutral venues, abandoned fixtures, and provider corrections can change tuple fields
+without changing the underlying match. First check whether the provider match ID or
+another bridge already resolves to an existing match; then use the tuple to prove the
+candidate belongs there.
 
 ## Reep-Style Lesson
 
-Match matching composes registries: provider teams resolve to register teams, then the
-fixture resolves to a register match. Raw events attach after identity is settled.
+Match matching composes registries: provider teams resolve to register teams, the
+provider match ID identifies the candidate fixture, and the fixture tuple corroborates
+the bridge. Raw events attach after identity is settled.

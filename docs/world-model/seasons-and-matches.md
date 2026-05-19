@@ -3,7 +3,7 @@ doc_type: world_model
 content_lane: reference
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-19
 site_section: world-model
 stance: descriptive
 contribution_model: maintainer_doctrine
@@ -45,9 +45,10 @@ whole cycle or a stage inside it.
 
 ## Match Identity
 
-A match record should carry the minimum fields needed to resolve the same real-world
-fixture across providers:
+A match record should carry both a provider-scoped fixture identity and the fields
+needed to corroborate that the fixture is the same real-world match across providers:
 
+- canonical or source-provider match ID,
 - match date,
 - kickoff time when known,
 - home team register ID,
@@ -55,6 +56,11 @@ fixture across providers:
 - competition register ID when known,
 - season register ID when known,
 - provider bridges.
+
+The provider match ID is the stable identity handle. The date/home/away/competition
+tuple is a resolution and corroboration gate. Do not use the tuple as the only mint
+identity: postponements, neutral venues, replays, abandoned fixtures, and provider
+corrections can move tuple fields without making the match a different fixture.
 
 Raw event, tracking, shot, odds, and box-score payloads should live outside the identity
 register and reference the match ID.

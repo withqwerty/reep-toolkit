@@ -3,7 +3,7 @@ doc_type: practice_guide
 content_lane: practice
 status: draft
 public_safe: true
-last_verified: 2026-04-29
+last_verified: 2026-05-19
 site_section: guides
 stance: opinionated
 contribution_model: maintainer_doctrine
@@ -49,14 +49,14 @@ Each register should document, for each entity type:
 
 A practical policy table looks like this:
 
-| Entity type | Can mint from                                                    | Bridge-only sources                                                            | Never mint from                              |
-| ----------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------- |
-| Player      | Sources with stable player ID plus DOB/name coverage.            | Signal-only apps, salary/game-rating providers, weak community bridges.        | Name-only records.                           |
-| Team        | Sources with stable team ID plus country/category context.       | Event/stats providers with team IDs but unclear parent/team-section semantics. | Display labels alone.                        |
-| Coach       | Sources with coach-specific ID plus DOB or strong role context.  | Player-profile sources that mention coaching role.                             | Staff names without identity fields.         |
-| Competition | Sources with stable competition family IDs and documented level. | Providers whose "league" actually means product bucket or stage.               | Free-text league labels.                     |
-| Season      | Sources with documented season/stage model.                      | Providers with display year only.                                              | Labels that cannot be tied to a competition. |
-| Match       | Fixture spines with resolved teams/date/competition.             | Event providers, odds feeds, box-score sources.                                | Raw event rows without fixture identity.     |
+| Entity type | Can mint from                                                      | Bridge-only sources                                                            | Never mint from                              |
+| ----------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------ | -------------------------------------------- |
+| Player      | Sources with stable player ID plus DOB/name coverage.              | Signal-only apps, salary/game-rating providers, weak community bridges.        | Name-only records.                           |
+| Team        | Sources with stable team ID plus country/category context.         | Event/stats providers with team IDs but unclear parent/team-section semantics. | Display labels alone.                        |
+| Coach       | Sources with coach-specific ID plus DOB or strong role context.    | Player-profile sources that mention coaching role.                             | Staff names without identity fields.         |
+| Competition | Sources with stable competition family IDs and documented level.   | Providers whose "league" actually means product bucket or stage.               | Free-text league labels.                     |
+| Season      | Sources with documented season/stage model.                        | Providers with display year only.                                              | Labels that cannot be tied to a competition. |
+| Match       | Fixture sources with stable match IDs plus resolved tuple context. | Event providers, odds feeds, box-score sources.                                | Raw event rows without fixture identity.     |
 
 This is deliberately stricter than "the provider has an ID". An ID can identify the
 wrong level of the world model.
@@ -79,11 +79,29 @@ Defer when:
 - the upstream entity level is unclear,
 - a likely match exists but needs review.
 
+## Coverage Floors
+
+Sometimes a missing corroborator is not a temporary gap. For lower tiers, women's
+competitions, youth football, or cup-only entrants, the strongest available provider may
+be the only provider that covers the team at all.
+
+If you choose to mint below that coverage floor, make the exception explicit:
+
+- define the country, gender, tier, or competition band covered by the rule,
+- keep the source that may mint narrow,
+- keep duplicate checks and category checks in place,
+- record why the ordinary corroborator requirement was waived,
+- revisit the rule if another provider later covers that level.
+
+Do not turn a coverage floor into a general shortcut. Above the documented floor, normal
+corroboration still applies.
+
 ## Matches Are Special
 
-Match identity is often best created from a fixture source that reliably identifies
-date, home team, away team, competition, and season. Event providers and odds providers
-can then attach as bridges.
+Match identity is best created from a fixture source with a stable provider match ID.
+Date, home team, away team, competition, and season are still required, but they are the
+resolution and corroboration gate, not the only identity key. Event providers and odds
+providers can then attach as bridges.
 
 The public rule is the important part: choose a match spine and make other sources
 corroborate it. The private implementation path is not part of the toolkit.
