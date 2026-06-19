@@ -30,6 +30,7 @@ credentials, deployment procedures, or one-off production commands.
 
 ## Current Guides
 
+- [Use the Reep v1 public release](use-reep-v1-public-release.md)
 - [Before you ingest](before-you-ingest.md)
 - [Golden path provider ingest](golden-path-provider-ingest.md)
 - [Matching thresholds](matching-thresholds.md)

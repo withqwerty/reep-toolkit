@@ -59,6 +59,9 @@ guide tells you what to do with that knowledge when building or maintaining a re
 
 - [Practice guides overview](guides/README.md): the opinionated, Reep-informed guide
   layer.
+- [Use the Reep v1 public release](guides/use-reep-v1-public-release.md): current public
+  release files, `/api/v1`, DuckDB, bridge roles, overlay-only names, and v0 migration
+  boundaries.
 - [Before you ingest](guides/before-you-ingest.md): what to understand before adding a
   provider to a register.
 - [Golden path provider ingest](guides/golden-path-provider-ingest.md): a conservative
