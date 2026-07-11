@@ -197,17 +197,19 @@ The boundary is documented in
 
 ## Relationship To The Other Reep Repos
 
-| Repo                       | Role                                                                                                                             |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `reep-toolkit` (this)      | Public documentation and examples for football identity work.                                                                    |
-| `reep-scripts`             | Legacy source material being migrated into the toolkit as guides, reference examples, schemas, and provider notes.               |
-| `reep-matching-logic-pack` | Private partner pack: source-authority playbooks, validation/review behaviour, maintenance loops, and sample write sets.         |
-| `reep-register-next`       | Private Reep Next control plane: doctrine artefacts, recipes, mint salts, review/action ledgers, projections, and publish gates. |
+| Repo                       | Role                                                                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `reep-toolkit` (this)      | Public documentation and examples for football identity work.                                                            |
+| `reep-scripts`             | Legacy source material being migrated into the toolkit as guides, reference examples, schemas, and provider notes.       |
+| `reep-matching-logic-pack` | Private partner pack: source-authority playbooks, validation/review behaviour, maintenance loops, and sample write sets. |
+| `reep-next`                | Active Loom engine and Reep Register: doctrine, canonical store, release gates and public projections.                   |
+| `reep-register-next`       | Legacy control-plane implementation retained as teacher material and migration evidence.                                 |
 
 Use this repo for explanation, public-safe examples, schemas, and reference scripts.
 Treat `reep-scripts` as migration input rather than a parallel public product. Keep
 partner operating models in the logic pack and Reep-specific mutation machinery in
-`reep-register-next`.
+`reep-next`. Treat `reep-register-next` as historical input rather than a parallel
+authority.
 
 ## Contributing
 

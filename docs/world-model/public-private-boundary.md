@@ -54,9 +54,11 @@ Public wording:
 | `reep-scripts`             | Legacy migration input.                                                           | Useful docs, examples, schemas, fixtures, and small patterns should be folded into the toolkit; package promises should be dropped.                             |
 | `football-docs`            | Source/provenance research backend.                                               | Provider facts can inform toolkit pages, but toolkit is the public authority at launch. Non-identity or access-heavy material can stay out of the public site.  |
 | `reep-matching-logic-pack` | Private partner pack.                                                             | Shows source-authority playbooks, review behaviour, validator logic, and sample write sets without exposing credentials, raw paid data, or production commands. |
-| `reep-register-next`       | Private Reep Next control plane.                                                  | Owns actual doctrine artefacts, canonical-feed assignments, mint salts, action ledgers, review DB state, projections, and publish gates.                        |
+| `reep-next`                | Active private Loom and Reep Register repository.                                 | Owns current doctrine, canonical state, release gates and public projections.                                                                                   |
+| `reep-register-next`       | Legacy control-plane repository.                                                  | Retained as teacher material and migration evidence; it does not own current Reep Next decisions.                                                               |
 
 If a contribution is public explanation, provider knowledge, a schema, a fixture, or a
 copyable reference script, keep it here. If it needs partner context or operating-model
 depth, keep it in the logic pack. If it depends on private Reep state, it stays in
-`reep-register-next`.
+`reep-next`. Mine `reep-register-next` only for historical lessons that are reconciled
+with current doctrine.

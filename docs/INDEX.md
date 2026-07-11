@@ -53,7 +53,7 @@ guide tells you what to do with that knowledge when building or maintaining a re
   canonical sources.
 - [Public/private boundary](world-model/public-private-boundary.md): what belongs in an
   open toolkit and how this repo relates to `reep-scripts`, the private logic pack, and
-  `reep-register-next`.
+  `reep-next`; `reep-register-next` is legacy teacher material.
 
 ## Practice Guides
 

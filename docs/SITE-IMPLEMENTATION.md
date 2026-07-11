@@ -68,7 +68,8 @@ The site should answer five reader questions:
 | `reep-scripts`             | Source material to mine, migrate, and then archive. It should not remain a parallel package/docs surface.                               |
 | `football-docs`            | Source/provenance research surface during migration. It should not remain a second public provider authority after toolkit launch.      |
 | `reep-matching-logic-pack` | Private partner-safe operating model with deeper source-authority playbooks, review behaviour, validation loops, and sample write sets. |
-| `reep-register-next`       | Private execution/control plane for Reep's actual register generation.                                                                  |
+| `reep-next`                | Active Loom engine and execution surface for Reep's actual Register generation.                                                         |
+| `reep-register-next`       | Legacy execution/control-plane material retained for migration and lessons.                                                             |
 
 For launch, `reep-toolkit` owns the public provider reference. `football-docs` can
 remain a local/operator research backend or MCP source, but any public provider claim
